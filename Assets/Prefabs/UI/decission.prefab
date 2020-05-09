@@ -83,6 +83,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4327749682433518544}
+  - component: {fileID: 9093867527032601988}
   m_Layer: 5
   m_Name: decission
   m_TagString: Untagged
@@ -110,6 +111,25 @@ RectTransform:
   m_AnchoredPosition: {x: 136.85, y: -14.375}
   m_SizeDelta: {x: 273.7, y: 28.75}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &9093867527032601988
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4327749682433518547}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75141a471c400bb49b8b1a9b8ecb448b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5827830029017858629
 GameObject:
   m_ObjectHideFlags: 0

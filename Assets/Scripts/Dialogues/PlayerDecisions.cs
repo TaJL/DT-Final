@@ -28,7 +28,10 @@ public class PlayerDecisions : NonPersistantSingleton<PlayerDecisions> {
     isActive = true;
 
     foreach (Transform child in decissions) {
-      child.GetComponent<Animator>().SetBool("selected", false);
+      Animator a = child.GetComponent<Animator>();
+      if (a) {
+        child.GetComponent<Animator>().SetBool("selected", false);
+      }
     }
   }
 
@@ -40,7 +43,7 @@ public class PlayerDecisions : NonPersistantSingleton<PlayerDecisions> {
 
   IEnumerator _Decide (Decision decision) {
     InputManager.input.Decission.Disable();
-    transform.Find(decision.ToString()).GetComponent<Animator>().SetBool("selected", true);
+    decissions.Find(decision.ToString()).GetComponent<Animator>().SetBool("selected", true);
 
     yield return new WaitForSeconds(0.8f);
 
