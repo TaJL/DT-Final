@@ -24,7 +24,7 @@ public class Npc : MonoBehaviour {
   Coroutine _speak;
 
   public void Speak () {
-    if (doneTalking) return;
+    if (doneTalking || (decision != Decision.None && current == 0)) return;
 
     if (_speak == null) {
       _speak = StartCoroutine(_Speak());

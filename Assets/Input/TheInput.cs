@@ -153,6 +153,14 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""27f26772-cd9d-4dcf-b418-7e596e5113d5"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -175,6 +183,72 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Talk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""82de41cd-3beb-4168-add1-322837e68b11"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""755db05d-c984-4259-b45b-bc49f90104a6"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""8654345c-0f9d-4cd9-9760-6f3946bd813e"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""f824c103-14b3-4318-a8bc-739e7c95879e"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""b99444c0-1aae-4ca2-9af3-ad5a11cdbb92"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""48c08b1b-43ec-46e7-a364-8d9f9101c903"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -230,6 +304,7 @@ public class @TheInput : IInputActionCollection, IDisposable
         // WorldActions
         m_WorldActions = asset.FindActionMap("WorldActions", throwIfNotFound: true);
         m_WorldActions_Talk = m_WorldActions.FindAction("Talk", throwIfNotFound: true);
+        m_WorldActions_Move = m_WorldActions.FindAction("Move", throwIfNotFound: true);
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
         m_Dialogue_Skip = m_Dialogue.FindAction("Skip", throwIfNotFound: true);
@@ -340,11 +415,13 @@ public class @TheInput : IInputActionCollection, IDisposable
     private readonly InputActionMap m_WorldActions;
     private IWorldActionsActions m_WorldActionsActionsCallbackInterface;
     private readonly InputAction m_WorldActions_Talk;
+    private readonly InputAction m_WorldActions_Move;
     public struct WorldActionsActions
     {
         private @TheInput m_Wrapper;
         public WorldActionsActions(@TheInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Talk => m_Wrapper.m_WorldActions_Talk;
+        public InputAction @Move => m_Wrapper.m_WorldActions_Move;
         public InputActionMap Get() { return m_Wrapper.m_WorldActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -357,6 +434,9 @@ public class @TheInput : IInputActionCollection, IDisposable
                 @Talk.started -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnTalk;
                 @Talk.performed -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnTalk;
                 @Talk.canceled -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnTalk;
+                @Move.started -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMove;
             }
             m_Wrapper.m_WorldActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -364,6 +444,9 @@ public class @TheInput : IInputActionCollection, IDisposable
                 @Talk.started += instance.OnTalk;
                 @Talk.performed += instance.OnTalk;
                 @Talk.canceled += instance.OnTalk;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
             }
         }
     }
@@ -411,6 +494,7 @@ public class @TheInput : IInputActionCollection, IDisposable
     public interface IWorldActionsActions
     {
         void OnTalk(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
     }
     public interface IDialogueActions
     {
