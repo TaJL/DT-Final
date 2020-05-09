@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public class Builder : MonoBehaviour {
   public Vector2 waitingTime = new Vector2(0, 0.5f);
   public Vector2 speedRange = new Vector2(20, 30);
-
+  [SerializeField]
+  public Tween tweener;
   public void Hide () {
     foreach (Transform child in transform) {
       child.transform.position = Util.SetY(child.transform.position, Bottom.PosY);
@@ -14,7 +15,8 @@ public class Builder : MonoBehaviour {
 
   public void Show () {
     foreach (Transform child in transform) {
-      StartCoroutine(_PopItTo(child, transform.position.y));
+      tweener.TweenTo(child,new Vector3(child.position.x, transform.position.y, child.position.z),null,Random.Range(waitingTime.x,waitingTime.y));
+//      StartCoroutine(_PopItTo(child, transform.position.y));
     }
   }
 

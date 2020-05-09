@@ -408,6 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 240909039}
   - component: {fileID: 240909038}
+  - component: {fileID: 240909040}
   m_Layer: 0
   m_Name: GAME MANAGER
   m_TagString: GameController
@@ -441,6 +442,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &240909040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240909037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b032661a3e4ed5ab795e73e5045049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &259917871
 GameObject:
   m_ObjectHideFlags: 0
@@ -6303,7 +6316,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 273.7, y: 0}
+  m_SizeDelta: {x: 273.45944, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754053441
 MonoBehaviour:
@@ -6826,6 +6839,66 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bc5b4308d6964584a8a908c87e04606a, type: 2}
+    - target: {fileID: 2822566516528589832, guid: 17675641d291e4348a208969a6df4eea,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822566516528589832, guid: 17675641d291e4348a208969a6df4eea,
+        type: 3}
+      propertyPath: waitingTime.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822566516528589832, guid: 17675641d291e4348a208969a6df4eea,
+        type: 3}
+      propertyPath: waitingTime.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822566516528589832, guid: 17675641d291e4348a208969a6df4eea,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822566516528589832, guid: 17675641d291e4348a208969a6df4eea,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[1].time
+      value: 0.69062525
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822566516528589832, guid: 17675641d291e4348a208969a6df4eea,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[1].value
+      value: 1.0009512
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822566516528589832, guid: 17675641d291e4348a208969a6df4eea,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[1].inSlope
+      value: 0.9858446
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822566516528589832, guid: 17675641d291e4348a208969a6df4eea,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[1].outSlope
+      value: 0.9858446
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822566516528589832, guid: 17675641d291e4348a208969a6df4eea,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822566516528589832, guid: 17675641d291e4348a208969a6df4eea,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822566516528589832, guid: 17675641d291e4348a208969a6df4eea,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822566516528589832, guid: 17675641d291e4348a208969a6df4eea,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3145095660730044776, guid: 17675641d291e4348a208969a6df4eea,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -7816,7 +7889,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 115, y: 0}
+  m_SizeDelta: {x: 114.898926, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1675883605
 MonoBehaviour:
@@ -8040,7 +8113,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 115, y: 0}
+  m_SizeDelta: {x: 114.89894, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108716590
 MonoBehaviour:
@@ -8973,6 +9046,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitingTime: {x: 0, y: 0.5}
   speedRange: {x: 30, y: 40}
+  tweener:
+    time: 1
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!208 &3952133878673772346
 NavMeshObstacle:
   m_ObjectHideFlags: 0
