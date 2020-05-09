@@ -13,6 +13,8 @@ public class Sword : MonoBehaviour {
   public float chargeSpeedMultiplier = 5;
   public float pushForce = 5;
   public Collider damageAoe;
+  public bool debugFront;
+  public bool debugAngle;
 
   Coroutine _attack;
 
@@ -24,8 +26,12 @@ public class Sword : MonoBehaviour {
   void OnTriggerEnter (Collider c) {
     AttackableEnemy attackable = c.GetComponent<AttackableEnemy>();
     if (attackable) {
-      Debug.Log(c, c);
-      attackable.MakeDamage(damage, transform.position, pushForce);
+      Vector3 direction = motion.transform.position - c.transform.position;
+      if (Vector3.SignedAngle(motion.transform.right, direction, Vector3.up) > 0 &&
+          Mathf.Abs(Vector3.SignedAngle(motion.transform.forward,
+                                        direction, Vector3.up)) > angle) {
+        attackable.MakeDamage(damage, transform.position, pushForce);
+      }
     }
   }
 
@@ -60,7 +66,7 @@ public class Sword : MonoBehaviour {
       speedMultiplier = 1 - elapsed / duration;
       yield return null;
     } while (elapsed < duration);
-    damageAoe.enabled = true;
+    damageAoe.enabled = false;
 
     yield return new WaitForSeconds(afterAttackRecovery);
 

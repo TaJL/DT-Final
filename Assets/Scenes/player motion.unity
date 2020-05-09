@@ -815,12 +815,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &442291974 stripped
-SphereCollider:
-  m_CorrespondingSourceObject: {fileID: 442291974, guid: e3b2e61f6de8bce4ca6bcb6dfb18daa3,
-    type: 3}
-  m_PrefabInstance: {fileID: 6656357629021804332}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &468289428 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8058115170265145052, guid: 17675641d291e4348a208969a6df4eea,
@@ -9259,14 +9253,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 442291973, guid: e3b2e61f6de8bce4ca6bcb6dfb18daa3, type: 3}
-      propertyPath: damageAoe
-      value: 
-      objectReference: {fileID: 442291974}
-    - target: {fileID: 442291974, guid: e3b2e61f6de8bce4ca6bcb6dfb18daa3, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6656357630410884864, guid: e3b2e61f6de8bce4ca6bcb6dfb18daa3,
         type: 3}
       propertyPath: m_LocalPosition.x
