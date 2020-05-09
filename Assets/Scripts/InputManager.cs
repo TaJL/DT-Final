@@ -15,4 +15,9 @@ public class InputManager : NonPersistantSingleton<InputManager> {
     if (value) action.Enable();
     else action.Disable();
   }
+
+  void OnDestroy () {
+    input.Dispose();
+    input = null;
+  }
 }
