@@ -25,6 +25,30 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""East"",
+                    ""type"": ""Button"",
+                    ""id"": ""f23609ea-1f24-4141-9821-973ad9542e07"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""South"",
+                    ""type"": ""Button"",
+                    ""id"": ""1be8a542-172d-4369-b9f7-e5072a7d39e2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""West"",
+                    ""type"": ""Button"",
+                    ""id"": ""1c3f7008-af3e-4f34-9fc9-3e83c00b2757"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -47,6 +71,72 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""North"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7a5b423e-87e5-4692-b466-e3504acb5577"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""East"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7aa82e50-e749-48d6-95f5-8921e4f95f5b"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""East"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""78332c2c-355d-4dd3-bdc0-2e9b5f05cce8"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""South"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9e8795d2-84b5-483d-91fd-c6a9abb36c99"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""South"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8ca69348-c115-4ac3-94d6-4d5aa1a9efec"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""West"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4cd8a2fa-efa9-4c9a-9337-8438373f4aaf"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""West"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -175,6 +265,9 @@ public class @TheInput : IInputActionCollection, IDisposable
         // Decission
         m_Decission = asset.FindActionMap("Decission", throwIfNotFound: true);
         m_Decission_North = m_Decission.FindAction("North", throwIfNotFound: true);
+        m_Decission_East = m_Decission.FindAction("East", throwIfNotFound: true);
+        m_Decission_South = m_Decission.FindAction("South", throwIfNotFound: true);
+        m_Decission_West = m_Decission.FindAction("West", throwIfNotFound: true);
         // WorldActions
         m_WorldActions = asset.FindActionMap("WorldActions", throwIfNotFound: true);
         m_WorldActions_Talk = m_WorldActions.FindAction("Talk", throwIfNotFound: true);
@@ -232,11 +325,17 @@ public class @TheInput : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Decission;
     private IDecissionActions m_DecissionActionsCallbackInterface;
     private readonly InputAction m_Decission_North;
+    private readonly InputAction m_Decission_East;
+    private readonly InputAction m_Decission_South;
+    private readonly InputAction m_Decission_West;
     public struct DecissionActions
     {
         private @TheInput m_Wrapper;
         public DecissionActions(@TheInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @North => m_Wrapper.m_Decission_North;
+        public InputAction @East => m_Wrapper.m_Decission_East;
+        public InputAction @South => m_Wrapper.m_Decission_South;
+        public InputAction @West => m_Wrapper.m_Decission_West;
         public InputActionMap Get() { return m_Wrapper.m_Decission; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -249,6 +348,15 @@ public class @TheInput : IInputActionCollection, IDisposable
                 @North.started -= m_Wrapper.m_DecissionActionsCallbackInterface.OnNorth;
                 @North.performed -= m_Wrapper.m_DecissionActionsCallbackInterface.OnNorth;
                 @North.canceled -= m_Wrapper.m_DecissionActionsCallbackInterface.OnNorth;
+                @East.started -= m_Wrapper.m_DecissionActionsCallbackInterface.OnEast;
+                @East.performed -= m_Wrapper.m_DecissionActionsCallbackInterface.OnEast;
+                @East.canceled -= m_Wrapper.m_DecissionActionsCallbackInterface.OnEast;
+                @South.started -= m_Wrapper.m_DecissionActionsCallbackInterface.OnSouth;
+                @South.performed -= m_Wrapper.m_DecissionActionsCallbackInterface.OnSouth;
+                @South.canceled -= m_Wrapper.m_DecissionActionsCallbackInterface.OnSouth;
+                @West.started -= m_Wrapper.m_DecissionActionsCallbackInterface.OnWest;
+                @West.performed -= m_Wrapper.m_DecissionActionsCallbackInterface.OnWest;
+                @West.canceled -= m_Wrapper.m_DecissionActionsCallbackInterface.OnWest;
             }
             m_Wrapper.m_DecissionActionsCallbackInterface = instance;
             if (instance != null)
@@ -256,6 +364,15 @@ public class @TheInput : IInputActionCollection, IDisposable
                 @North.started += instance.OnNorth;
                 @North.performed += instance.OnNorth;
                 @North.canceled += instance.OnNorth;
+                @East.started += instance.OnEast;
+                @East.performed += instance.OnEast;
+                @East.canceled += instance.OnEast;
+                @South.started += instance.OnSouth;
+                @South.performed += instance.OnSouth;
+                @South.canceled += instance.OnSouth;
+                @West.started += instance.OnWest;
+                @West.performed += instance.OnWest;
+                @West.canceled += instance.OnWest;
             }
         }
     }
@@ -337,6 +454,9 @@ public class @TheInput : IInputActionCollection, IDisposable
     public interface IDecissionActions
     {
         void OnNorth(InputAction.CallbackContext context);
+        void OnEast(InputAction.CallbackContext context);
+        void OnSouth(InputAction.CallbackContext context);
+        void OnWest(InputAction.CallbackContext context);
     }
     public interface IWorldActionsActions
     {
