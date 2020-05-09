@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -6,6 +7,7 @@ public class PlayerDecisions : NonPersistantSingleton<PlayerDecisions> {
   public static event System.Action<Decision, Npc> onDecisionMade;
   public static bool isActive = false;
   public Animator animator;
+  public Npc target;
 
   public Transform decissions;
 
@@ -21,16 +23,24 @@ public class PlayerDecisions : NonPersistantSingleton<PlayerDecisions> {
       ctx => { StartCoroutine(_Decide(Decision.West)); };
   }
 
-  public void Activate () {
+  public void Activate (Npc npc) {
     animator.SetBool("visible", true);
     InputManager.input.Dialogue.Disable();
     InputManager.input.Decission.Enable();
     isActive = true;
+    this.target = npc;
 
     foreach (Transform child in decissions) {
       Animator a = child.GetComponent<Animator>();
       if (a) {
-        child.GetComponent<Animator>().SetBool("selected", false);
+        if (npc.availableDecisions.Get(child.name) == "") {
+          child.gameObject.SetActive(false);
+        } else {
+          child.gameObject.SetActive(true);
+          a.SetBool("selected", false);
+          child.GetComponentInChildren<Text>().text =
+            npc.availableDecisions.Get(child.name);
+        }
       }
     }
   }
@@ -42,6 +52,8 @@ public class PlayerDecisions : NonPersistantSingleton<PlayerDecisions> {
   }
 
   IEnumerator _Decide (Decision decision) {
+    if (target.availableDecisions.Get(decision) == "") yield break;
+
     InputManager.input.Decission.Disable();
     decissions.Find(decision.ToString()).GetComponent<Animator>().SetBool("selected", true);
 

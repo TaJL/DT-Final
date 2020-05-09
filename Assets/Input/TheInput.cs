@@ -166,6 +166,17 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""action"": ""Talk"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e9d694f8-1104-4c14-8a62-cde0e7de5a20"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Talk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -173,14 +184,6 @@ public class @TheInput : IInputActionCollection, IDisposable
             ""name"": ""Dialogue"",
             ""id"": ""0172185e-b6d5-4a1e-ba5a-6b1b5915ec80"",
             ""actions"": [
-                {
-                    ""name"": ""Next"",
-                    ""type"": ""Button"",
-                    ""id"": ""1debb61a-0c6b-401b-8940-d7220bdf9d77"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
                 {
                     ""name"": ""Skip"",
                     ""type"": ""Button"",
@@ -191,50 +194,6 @@ public class @TheInput : IInputActionCollection, IDisposable
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""2c7d2275-9585-4588-9a85-9eeacd11bf9a"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Next"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6da7bd13-e27d-48a7-97f6-81b76870bd1b"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Next"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0d2de351-f770-47b2-b3b0-92ff45e0d58b"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Next"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4e523d3b-1583-4423-8241-503d2c53138b"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Next"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": """",
                     ""id"": ""ee2bd809-f44c-4615-b640-0be4fefd89ae"",
@@ -273,7 +232,6 @@ public class @TheInput : IInputActionCollection, IDisposable
         m_WorldActions_Talk = m_WorldActions.FindAction("Talk", throwIfNotFound: true);
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
-        m_Dialogue_Next = m_Dialogue.FindAction("Next", throwIfNotFound: true);
         m_Dialogue_Skip = m_Dialogue.FindAction("Skip", throwIfNotFound: true);
     }
 
@@ -414,13 +372,11 @@ public class @TheInput : IInputActionCollection, IDisposable
     // Dialogue
     private readonly InputActionMap m_Dialogue;
     private IDialogueActions m_DialogueActionsCallbackInterface;
-    private readonly InputAction m_Dialogue_Next;
     private readonly InputAction m_Dialogue_Skip;
     public struct DialogueActions
     {
         private @TheInput m_Wrapper;
         public DialogueActions(@TheInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Next => m_Wrapper.m_Dialogue_Next;
         public InputAction @Skip => m_Wrapper.m_Dialogue_Skip;
         public InputActionMap Get() { return m_Wrapper.m_Dialogue; }
         public void Enable() { Get().Enable(); }
@@ -431,9 +387,6 @@ public class @TheInput : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_DialogueActionsCallbackInterface != null)
             {
-                @Next.started -= m_Wrapper.m_DialogueActionsCallbackInterface.OnNext;
-                @Next.performed -= m_Wrapper.m_DialogueActionsCallbackInterface.OnNext;
-                @Next.canceled -= m_Wrapper.m_DialogueActionsCallbackInterface.OnNext;
                 @Skip.started -= m_Wrapper.m_DialogueActionsCallbackInterface.OnSkip;
                 @Skip.performed -= m_Wrapper.m_DialogueActionsCallbackInterface.OnSkip;
                 @Skip.canceled -= m_Wrapper.m_DialogueActionsCallbackInterface.OnSkip;
@@ -441,9 +394,6 @@ public class @TheInput : IInputActionCollection, IDisposable
             m_Wrapper.m_DialogueActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Next.started += instance.OnNext;
-                @Next.performed += instance.OnNext;
-                @Next.canceled += instance.OnNext;
                 @Skip.started += instance.OnSkip;
                 @Skip.performed += instance.OnSkip;
                 @Skip.canceled += instance.OnSkip;
@@ -464,7 +414,6 @@ public class @TheInput : IInputActionCollection, IDisposable
     }
     public interface IDialogueActions
     {
-        void OnNext(InputAction.CallbackContext context);
         void OnSkip(InputAction.CallbackContext context);
     }
 }

@@ -9,6 +9,7 @@ public class Npc : MonoBehaviour {
   public event System.Action<Decision> onDecisionGiven;
   public static int counter = 0;
 
+  public AvailableDecissions availableDecisions;
   public Decision decision;
   public bool requiresDecision = true;
   public DialogueEntry[] message;
@@ -66,7 +67,7 @@ public class Npc : MonoBehaviour {
     _speak = null;
     if (current >= message.Length) {
       if (requiresDecision) {
-        PlayerDecisions.Instance.Activate();
+        PlayerDecisions.Instance.Activate(this);
         PlayerDecisions.onDecisionMade += HandleDecision;
       }
       if (onTalkingFinished != null) onTalkingFinished();
