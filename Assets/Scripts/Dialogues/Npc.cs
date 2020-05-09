@@ -44,7 +44,7 @@ public class Npc : MonoBehaviour {
   }
 
   public void IndicateActiveForTalk () {
-    actionIndicator.SetActive(true);
+    actionIndicator.SetActive(decision == Decision.None && current == 0);
   }
 
   IEnumerator _Speak () {
