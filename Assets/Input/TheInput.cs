@@ -161,6 +161,14 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""MeleeAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""d5cac941-e8a8-4107-b0dd-5bacf4ce41ca"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -251,6 +259,28 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0ba1b096-83f1-4d35-9c2c-2e7baa902283"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MeleeAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fbc5a4fc-cc82-4991-88a4-7f415ab5d5b6"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MeleeAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -305,6 +335,7 @@ public class @TheInput : IInputActionCollection, IDisposable
         m_WorldActions = asset.FindActionMap("WorldActions", throwIfNotFound: true);
         m_WorldActions_Talk = m_WorldActions.FindAction("Talk", throwIfNotFound: true);
         m_WorldActions_Move = m_WorldActions.FindAction("Move", throwIfNotFound: true);
+        m_WorldActions_MeleeAttack = m_WorldActions.FindAction("MeleeAttack", throwIfNotFound: true);
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
         m_Dialogue_Skip = m_Dialogue.FindAction("Skip", throwIfNotFound: true);
@@ -416,12 +447,14 @@ public class @TheInput : IInputActionCollection, IDisposable
     private IWorldActionsActions m_WorldActionsActionsCallbackInterface;
     private readonly InputAction m_WorldActions_Talk;
     private readonly InputAction m_WorldActions_Move;
+    private readonly InputAction m_WorldActions_MeleeAttack;
     public struct WorldActionsActions
     {
         private @TheInput m_Wrapper;
         public WorldActionsActions(@TheInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Talk => m_Wrapper.m_WorldActions_Talk;
         public InputAction @Move => m_Wrapper.m_WorldActions_Move;
+        public InputAction @MeleeAttack => m_Wrapper.m_WorldActions_MeleeAttack;
         public InputActionMap Get() { return m_Wrapper.m_WorldActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -437,6 +470,9 @@ public class @TheInput : IInputActionCollection, IDisposable
                 @Move.started -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMove;
+                @MeleeAttack.started -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMeleeAttack;
+                @MeleeAttack.performed -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMeleeAttack;
+                @MeleeAttack.canceled -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMeleeAttack;
             }
             m_Wrapper.m_WorldActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -447,6 +483,9 @@ public class @TheInput : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @MeleeAttack.started += instance.OnMeleeAttack;
+                @MeleeAttack.performed += instance.OnMeleeAttack;
+                @MeleeAttack.canceled += instance.OnMeleeAttack;
             }
         }
     }
@@ -495,6 +534,7 @@ public class @TheInput : IInputActionCollection, IDisposable
     {
         void OnTalk(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
+        void OnMeleeAttack(InputAction.CallbackContext context);
     }
     public interface IDialogueActions
     {

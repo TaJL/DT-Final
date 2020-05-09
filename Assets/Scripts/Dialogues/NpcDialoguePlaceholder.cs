@@ -11,7 +11,8 @@ public class NpcDialoguePlaceholder : NonPersistantSingleton<NpcDialoguePlacehol
   public bool jump = false;
 
   void Awake () {
-    InputManager.input.Dialogue.Skip.started += ctx => jump = true;
+    InputManager.input.Dialogue.Skip.started +=
+      ctx => jump = true;
   }
 
   public void SetVisibility (bool value) {

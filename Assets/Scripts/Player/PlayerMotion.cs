@@ -16,7 +16,8 @@ public class PlayerMotion : MonoBehaviour {
           direction = Vector3.zero;
         } else {
           direction = ctx.ReadValue<Vector2>();
-          direction = viewport.right * direction.x + viewport.forward * direction.y;
+          direction = viewport.right * direction.x +
+            viewport.forward * direction.y;
         }
       });
   }
