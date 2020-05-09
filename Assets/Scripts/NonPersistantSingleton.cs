@@ -18,6 +18,10 @@ public class NonPersistantSingleton<T> : MonoBehaviour where T : MonoBehaviour {
   void Awake () {
     if (Instance != this) {
       Destroy(gameObject);
+    } else {
+      CustomAwake();
     }
   }
+
+  public virtual void CustomAwake () {}
 }
