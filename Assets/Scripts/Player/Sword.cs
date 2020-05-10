@@ -14,10 +14,9 @@ public class Sword : MonoBehaviour {
   public float chargeSpeedMultiplier = 5;
   public float pushForce = 5;
   public Collider damageAoe;
-  public bool debugFront;
-  public bool debugAngle;
   public ParticlesPool hit_particles;
   Coroutine _attack;
+  public float omnidirectionalRadius = 0.1f;
 
   private void Awake()
   {
@@ -37,10 +36,10 @@ public class Sword : MonoBehaviour {
   void OnTriggerEnter (Collider c) {
     AttackableEnemy attackable = c.GetComponent<AttackableEnemy>();
     if (attackable) {
-      Vector3 direction = motion.transform.position - c.transform.position;
-      if (Vector3.SignedAngle(motion.transform.right, direction, Vector3.up) > 0 &&
-          Mathf.Abs(Vector3.SignedAngle(motion.transform.forward,
-                                        direction, Vector3.up)) > angle) {
+      Vector3 direction = c.transform.position - motion.transform.position;
+      if (direction.magnitude < omnidirectionalRadius ||
+          (Vector3.SignedAngle(motion.transform.right, direction, Vector3.up) > 0 &&
+           Vector3.Angle(motion.attackDirection, direction) < angle)) {
         attackable.MakeDamage(damage, transform.position, pushForce);
         CameraSmoothFollow.Instance.Shake(0.25f,0.1f);
         CameraSmoothFollow.Instance.Freeze(0.25f);
@@ -51,9 +50,11 @@ public class Sword : MonoBehaviour {
 
   void Update () {
     attack.Update();
+    transform.forward = motion.attackDirection;
   }
 
   public void Attack () {
+    if (NpcDialoguePlaceholder.Instance.IsVisible) return;
     if (!attack.IsOver) return;
     if (_attack != null) return;
     _attack = StartCoroutine(_Attack());
@@ -75,7 +76,7 @@ public class Sword : MonoBehaviour {
       transform.localRotation =
         Quaternion.Euler(0, Mathf.Lerp(-direction * angle, direction * angle,
                                        elapsed / duration), 0);
-      motion.transform.position += (motion.transform.forward * Time.deltaTime *
+      motion.transform.position += (motion.attackDirection * Time.deltaTime *
                                     motion.speed * chargeSpeedMultiplier * speedMultiplier);
       speedMultiplier = 1 - elapsed / duration;
       yield return null;
