@@ -10269,7 +10269,7 @@ MonoBehaviour:
   smoothedMotion: {x: 0, y: 0, z: 0}
   smoothedDirection: {x: 0, y: 0, z: 0}
   motionSmoothSpeed: 5
-  directionSmoothSpeed: 5
+  directionSmoothSpeed: 10
 --- !u!1 &7631352439013860987
 GameObject:
   m_ObjectHideFlags: 0

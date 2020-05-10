@@ -25,6 +25,7 @@ public class PlayerMotion : MonoBehaviour {
             viewport.forward * direction.y;
         }
       });
+    smoothedDirection = attackDirection = transform.forward;
   }
 
   void FixedUpdate () {
