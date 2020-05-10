@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,12 +16,22 @@ public class Sword : MonoBehaviour {
   public Collider damageAoe;
   public bool debugFront;
   public bool debugAngle;
-
+  public ParticlesPool hit_particles;
   Coroutine _attack;
+
+  private void Awake()
+  {
+    hit_particles.Initialize();
+  }
 
   void OnEnable () {
     InputManager.input.WorldActions.MeleeAttack.started += ctx => Attack();
     transform.Rotate(0, angle, 0);
+  }
+
+  private void OnDestroy()
+  {
+    hit_particles.ReleaseResources();
   }
 
   void OnTriggerEnter (Collider c) {
@@ -32,6 +43,8 @@ public class Sword : MonoBehaviour {
                                         direction, Vector3.up)) > angle) {
         attackable.MakeDamage(damage, transform.position, pushForce);
         CameraSmoothFollow.Instance.Shake(0.25f,0.1f);
+        CameraSmoothFollow.Instance.Freeze(0.25f);
+        hit_particles.PlayParticleAt(c.transform.position + (c.transform.position - transform.position)/2);
       }
     }
   }

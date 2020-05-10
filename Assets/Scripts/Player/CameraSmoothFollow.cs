@@ -24,14 +24,14 @@ public class CameraSmoothFollow : NonPersistantSingleton<CameraSmoothFollow> {
   {
       IEnumerator Coroutine()
       {
-          Time.timeScale = 0;
+          //Time.timeScale = 0;
 
           while (time > 0)
           {
               transform.position += Quaternion.AngleAxis(Random.Range(0, 360), transform.forward) * transform.right *
                                     amount;
               time -= Time.deltaTime;
-              Time.timeScale = 1-time;
+              //Time.timeScale = 1-time;
 
               yield return null;
           }
@@ -56,7 +56,21 @@ public class CameraSmoothFollow : NonPersistantSingleton<CameraSmoothFollow> {
               yield return null;
           }
       }
+      StartCoroutine(Coroutine());
+  }
 
+  public void Freeze(float seconds)
+  {
+      IEnumerator Coroutine()
+      {
+          Time.timeScale = 0;
+          while (seconds > 0)
+          {
+              seconds -= Time.unscaledDeltaTime;
+              yield return null;
+          }
+          Time.timeScale = 1;
+      }
       StartCoroutine(Coroutine());
   }
 }
