@@ -3907,7 +3907,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    maxLights: 5
+    maxLights: 8
   TrailModule:
     enabled: 0
     mode: 0
@@ -4741,7 +4741,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 89cfe9ffabb8cf84b885af8ecda2d16a, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4863,6 +4863,10 @@ MonoBehaviour:
   damageAoe: {fileID: 442291974}
   debugFront: 0
   debugAngle: 0
+  hit_particles:
+    prefab: {fileID: 2128286717462749323, guid: e802cb88b4597234386e24596d8d774d,
+      type: 3}
+    start_size: 3
 --- !u!54 &442291975
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9680,7 +9684,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 89cfe9ffabb8cf84b885af8ecda2d16a, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -9813,7 +9817,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 5.97e-43, y: 0, z: 0, w: 5.4673e-41}
+  m_BoundingSphereOverride: {x: 0, y: 2.3510647e-38, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -10262,7 +10266,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 12
   direction: {x: 0, y: 0, z: 0}
-  directionLerped: {x: 0, y: 0, z: 0}
 --- !u!1 &7631352439013860987
 GameObject:
   m_ObjectHideFlags: 0
@@ -15095,11 +15098,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FirefliesParticle
-      objectReference: {fileID: 0}
-    - target: {fileID: 5426097303562548128, guid: b6def89020693774aa2a397a708b12d4,
-        type: 3}
-      propertyPath: moveWithTransform
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5912304669200321014, guid: b6def89020693774aa2a397a708b12d4,
         type: 3}

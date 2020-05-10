@@ -155,18 +155,10 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""VerticalAxis"",
-                    ""type"": ""Value"",
+                    ""name"": ""Move"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""27f26772-cd9d-4dcf-b418-7e596e5113d5"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""HorizontalAxis"",
-                    ""type"": ""Value"",
-                    ""id"": ""777529a7-2500-401a-9224-865e4acc493e"",
-                    ""expectedControlType"": ""Axis"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -203,70 +195,70 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Keyboard"",
-                    ""id"": ""ce266151-7aa2-45a7-802e-054166c41053"",
-                    ""path"": ""1DAxis"",
+                    ""name"": ""WASD"",
+                    ""id"": ""82de41cd-3beb-4168-add1-322837e68b11"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""VerticalAxis"",
+                    ""action"": ""Move"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""2f3f88b8-d794-4810-bca9-dd87926a318a"",
+                    ""name"": ""up"",
+                    ""id"": ""755db05d-c984-4259-b45b-bc49f90104a6"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""VerticalAxis"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""79515fe1-468b-459a-b5de-d5f707ba8c5b"",
+                    ""name"": ""down"",
+                    ""id"": ""8654345c-0f9d-4cd9-9760-6f3946bd813e"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""VerticalAxis"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Gamepad"",
-                    ""id"": ""fa56f135-c7d2-4373-af85-baa281812e89"",
-                    ""path"": ""1DAxis"",
+                    ""name"": ""left"",
+                    ""id"": ""f824c103-14b3-4318-a8bc-739e7c95879e"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""VerticalAxis"",
-                    ""isComposite"": true,
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""b99444c0-1aae-4ca2-9af3-ad5a11cdbb92"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""48c08b1b-43ec-46e7-a364-8d9f9101c903"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""c134488a-34fe-4875-a23d-5a65a70da29e"",
-                    ""path"": ""<Gamepad>/leftStick/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""VerticalAxis"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""24e7c644-e5e2-40ce-9410-44c8e3dcaa97"",
-                    ""path"": ""<Gamepad>/leftStick/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""VerticalAxis"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -289,39 +281,6 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""action"": ""MeleeAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Keyboard"",
-                    ""id"": ""4bfda830-d35c-40e1-b85d-54b902736f7a"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HorizontalAxis"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""e6e96a85-cb51-4e18-b2ac-fc5e5b183dc8"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HorizontalAxis"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""42f28f76-7bc3-4076-8637-feec4db925ac"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HorizontalAxis"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -375,8 +334,7 @@ public class @TheInput : IInputActionCollection, IDisposable
         // WorldActions
         m_WorldActions = asset.FindActionMap("WorldActions", throwIfNotFound: true);
         m_WorldActions_Talk = m_WorldActions.FindAction("Talk", throwIfNotFound: true);
-        m_WorldActions_VerticalAxis = m_WorldActions.FindAction("VerticalAxis", throwIfNotFound: true);
-        m_WorldActions_HorizontalAxis = m_WorldActions.FindAction("HorizontalAxis", throwIfNotFound: true);
+        m_WorldActions_Move = m_WorldActions.FindAction("Move", throwIfNotFound: true);
         m_WorldActions_MeleeAttack = m_WorldActions.FindAction("MeleeAttack", throwIfNotFound: true);
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
@@ -488,16 +446,14 @@ public class @TheInput : IInputActionCollection, IDisposable
     private readonly InputActionMap m_WorldActions;
     private IWorldActionsActions m_WorldActionsActionsCallbackInterface;
     private readonly InputAction m_WorldActions_Talk;
-    private readonly InputAction m_WorldActions_VerticalAxis;
-    private readonly InputAction m_WorldActions_HorizontalAxis;
+    private readonly InputAction m_WorldActions_Move;
     private readonly InputAction m_WorldActions_MeleeAttack;
     public struct WorldActionsActions
     {
         private @TheInput m_Wrapper;
         public WorldActionsActions(@TheInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Talk => m_Wrapper.m_WorldActions_Talk;
-        public InputAction @VerticalAxis => m_Wrapper.m_WorldActions_VerticalAxis;
-        public InputAction @HorizontalAxis => m_Wrapper.m_WorldActions_HorizontalAxis;
+        public InputAction @Move => m_Wrapper.m_WorldActions_Move;
         public InputAction @MeleeAttack => m_Wrapper.m_WorldActions_MeleeAttack;
         public InputActionMap Get() { return m_Wrapper.m_WorldActions; }
         public void Enable() { Get().Enable(); }
@@ -511,12 +467,9 @@ public class @TheInput : IInputActionCollection, IDisposable
                 @Talk.started -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnTalk;
                 @Talk.performed -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnTalk;
                 @Talk.canceled -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnTalk;
-                @VerticalAxis.started -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnVerticalAxis;
-                @VerticalAxis.performed -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnVerticalAxis;
-                @VerticalAxis.canceled -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnVerticalAxis;
-                @HorizontalAxis.started -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnHorizontalAxis;
-                @HorizontalAxis.performed -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnHorizontalAxis;
-                @HorizontalAxis.canceled -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnHorizontalAxis;
+                @Move.started -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMove;
                 @MeleeAttack.started -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMeleeAttack;
                 @MeleeAttack.performed -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMeleeAttack;
                 @MeleeAttack.canceled -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMeleeAttack;
@@ -527,12 +480,9 @@ public class @TheInput : IInputActionCollection, IDisposable
                 @Talk.started += instance.OnTalk;
                 @Talk.performed += instance.OnTalk;
                 @Talk.canceled += instance.OnTalk;
-                @VerticalAxis.started += instance.OnVerticalAxis;
-                @VerticalAxis.performed += instance.OnVerticalAxis;
-                @VerticalAxis.canceled += instance.OnVerticalAxis;
-                @HorizontalAxis.started += instance.OnHorizontalAxis;
-                @HorizontalAxis.performed += instance.OnHorizontalAxis;
-                @HorizontalAxis.canceled += instance.OnHorizontalAxis;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
                 @MeleeAttack.started += instance.OnMeleeAttack;
                 @MeleeAttack.performed += instance.OnMeleeAttack;
                 @MeleeAttack.canceled += instance.OnMeleeAttack;
@@ -583,8 +533,7 @@ public class @TheInput : IInputActionCollection, IDisposable
     public interface IWorldActionsActions
     {
         void OnTalk(InputAction.CallbackContext context);
-        void OnVerticalAxis(InputAction.CallbackContext context);
-        void OnHorizontalAxis(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
         void OnMeleeAttack(InputAction.CallbackContext context);
     }
     public interface IDialogueActions
