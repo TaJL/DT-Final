@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using MEC;
+using UnityEngine.InputSystem;
 
 public class TitleScreen : MonoBehaviour
 {
@@ -12,10 +13,27 @@ public class TitleScreen : MonoBehaviour
     [SerializeField] private float SelectedFontSize = 150;
     [SerializeField] private TextMeshProUGUI startText;
     [SerializeField] private TextMeshProUGUI exitText;
+    TheInput controls;
 
     private void Awake()
     {
+        controls = new TheInput();
+        controls.TitleScreen.Up.performed += ctx => ActualiceToStartOption();
+        controls.TitleScreen.Down.performed += ctx => ActualiceToExitOption();
+        controls.TitleScreen.Select.performed += ctx => SelectOption();
+        controls.TitleScreen.Enable();
+
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void ActualiceToStartOption()
+    {
+        ActualiceOption(Options.Start);
+    }
+
+    private void ActualiceToExitOption()
+    {
+        ActualiceOption(Options.Exit);
     }
 
     private void ActualiceOption(Options newOption)
@@ -52,7 +70,8 @@ public class TitleScreen : MonoBehaviour
     {
         if (optionActual == Options.Start)
         {
-            SceneManager.LoadScene(0);
+            controls.TitleScreen.Disable();
+            SceneManager.LoadScene(1);
         }
         else
         {
