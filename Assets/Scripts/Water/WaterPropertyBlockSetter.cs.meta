@@ -1,8 +1,13 @@
 fileFormatVersion: 2
 guid: 7b610d095b4e1b044805a720533b3ce8
+<<<<<<< HEAD
 timeCreated: 1493665152
 licenseType: Store
 MonoImporter:
+=======
+MonoImporter:
+  externalObjects: {}
+>>>>>>> 308343f09f41cb9bab709770e0c55fbbd66ccfb6
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0

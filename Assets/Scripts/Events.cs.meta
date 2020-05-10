@@ -1,3 +1,17 @@
+<<<<<<< HEAD
 ﻿fileFormatVersion: 2
 guid: 4b8aff380f394d188ac2adfed63f6cce
 timeCreated: 1589067590
+=======
+fileFormatVersion: 2
+guid: 4b8aff380f394d188ac2adfed63f6cce
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> 308343f09f41cb9bab709770e0c55fbbd66ccfb6
