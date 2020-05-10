@@ -12,6 +12,19 @@ public class PlayerAnimations : MonoBehaviour {
     GetComponentInChildren<Sword>().onAttack += AttackAnimation;
     hp = GetComponentInChildren<Attackable>();
     hp.onDamageTaken += TakeDamageAnimation;
+    hp.onDead += HandleDead;
+  }
+
+  void OnDisable () {
+    if (GetComponentInChildren<Sword>()) {
+      GetComponentInChildren<Sword>().onAttack -= AttackAnimation;
+    }
+    hp.onDamageTaken -= TakeDamageAnimation;
+    hp.onDead -= HandleDead;
+  }
+
+  public void HandleDead () {
+    animator.SetTrigger("die");
   }
 
   public void AttackAnimation () {

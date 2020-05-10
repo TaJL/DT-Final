@@ -696,7 +696,7 @@ PrefabInstance:
     - target: {fileID: 9140226030759647289, guid: 3908240e3380f5c43abe7eb53146c4a6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9140226030759647293, guid: 3908240e3380f5c43abe7eb53146c4a6,
         type: 3}
@@ -1659,6 +1659,7 @@ MonoBehaviour:
     resetsOnOver: 0
     randomStart: 0
   body: {fileID: 725045456}
+  dead: 0
 --- !u!135 &725045451
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3467,7 +3468,7 @@ PrefabInstance:
     - target: {fileID: 9140226030759647289, guid: 3908240e3380f5c43abe7eb53146c4a6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9140226030759647293, guid: 3908240e3380f5c43abe7eb53146c4a6,
         type: 3}
@@ -5408,11 +5409,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6656357630410884865, guid: e3b2e61f6de8bce4ca6bcb6dfb18daa3,
-        type: 3}
-      propertyPath: m_Drag
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6656357630410884868, guid: e3b2e61f6de8bce4ca6bcb6dfb18daa3,
         type: 3}
