@@ -506,7 +506,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: -0.0000000036621088}
+  m_BoundingSphereOverride: {x: 0, y: 0.21875, z: 0.046875, w: -0.046875}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1736,7 +1736,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 273.6406, y: 0}
+  m_SizeDelta: {x: 273.58975, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754053441
 MonoBehaviour:
@@ -3867,7 +3867,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 114.97504, y: 0}
+  m_SizeDelta: {x: 114.953674, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1675883605
 MonoBehaviour:
@@ -4733,7 +4733,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 114.97504, y: 0}
+  m_SizeDelta: {x: 114.95366, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108716590
 MonoBehaviour:
