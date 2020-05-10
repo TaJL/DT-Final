@@ -4847,7 +4847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trail: {fileID: 357430531}
-  angle: 120
+  angle: 150
   duration: 0.1
   damage: 1
   attack:
@@ -4861,12 +4861,11 @@ MonoBehaviour:
   chargeSpeedMultiplier: 5
   pushForce: 5
   damageAoe: {fileID: 442291974}
-  debugFront: 0
-  debugAngle: 0
   hit_particles:
     prefab: {fileID: 2128286717462749323, guid: e802cb88b4597234386e24596d8d774d,
       type: 3}
     start_size: 3
+  omnidirectionalRadius: 1.5
 --- !u!54 &442291975
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10265,7 +10264,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
+  attackDirection: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
+  smoothedMotion: {x: 0, y: 0, z: 0}
+  smoothedDirection: {x: 0, y: 0, z: 0}
+  motionSmoothSpeed: 5
+  directionSmoothSpeed: 5
 --- !u!1 &7631352439013860987
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,12 @@ using System.Collections.Generic;
 
 public class PlayerMotion : MonoBehaviour {
   public float speed = 8;
+  public Vector3 attackDirection;
   public Vector3 direction;
+  public Vector3 smoothedMotion;
+  public Vector3 smoothedDirection;
+  public float motionSmoothSpeed = 5;
+  public float directionSmoothSpeed = 5;
 
   void Awake () {
     Transform viewport = Camera.main.transform.parent;
@@ -23,10 +28,22 @@ public class PlayerMotion : MonoBehaviour {
   }
 
   void FixedUpdate () {
-    if (direction.magnitude > 0.2f) {
-      transform.forward = direction;
+    if (direction.magnitude > 0.2f) { // uso intencional de direction
+      attackDirection = direction;
+      // transform.position += direction * speed * Time.deltaTime;
+      // transform.forward = direction;
     }
 
-    transform.position += direction * speed * Time.deltaTime;
+    smoothedDirection =
+      Vector3.RotateTowards(smoothedDirection, attackDirection,
+                            directionSmoothSpeed * Time.deltaTime, 1);
+
+    transform.forward = smoothedDirection;
+
+    smoothedMotion =
+      Vector3.MoveTowards(smoothedMotion, direction,
+                          motionSmoothSpeed * Time.deltaTime);
+
+    transform.position += smoothedMotion * speed * Time.deltaTime;
   }
 }
