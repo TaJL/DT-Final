@@ -31,6 +31,7 @@ public class Sword : MonoBehaviour {
           Mathf.Abs(Vector3.SignedAngle(motion.transform.forward,
                                         direction, Vector3.up)) > angle) {
         attackable.MakeDamage(damage, transform.position, pushForce);
+        CameraSmoothFollow.Instance.Shake(0.25f,0.1f);
       }
     }
   }
