@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Unity\DT-Final" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Input" t="Include">
+          <e p="TheInput.cs" t="Include" />
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Trinary Software" t="Include">
+            <e p="Timing.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Animation" t="Include">
+            <e p="Tween.cs" t="Include" />
+          </e>
+          <e p="Attackable.cs" t="Include" />
+          <e p="Audio" t="Include">
+            <e p="Mixer.cs" t="Include" />
+          </e>
+          <e p="AudioManager.cs" t="Include" />
+          <e p="BuggyLayout.cs" t="Include" />
+          <e p="Cooldown.cs" t="Include" />
+          <e p="Dialogues" t="Include">
+            <e p="AoeDetector.cs" t="Include" />
+            <e p="AvailableDecissions.cs" t="Include" />
+            <e p="ConditionalKeyMapping.cs" t="Include" />
+            <e p="Decision.cs" t="Include" />
+            <e p="DialogueEntry.cs" t="Include" />
+            <e p="Emotion.cs" t="Include" />
+            <e p="Npc.cs" t="Include" />
+            <e p="NpcDialoguePlaceholder.cs" t="Include" />
+            <e p="PlayerDecisions.cs" t="Include" />
+            <e p="PlayerDetector.cs" t="Include" />
+            <e p="TalkativePlayer.cs" t="Include" />
+          </e>
+          <e p="Editor" t="Include">
+            <e p="AutomatedBakerEditor.cs" t="Include" />
+          </e>
+          <e p="Enemies" t="Include">
+            <e p="AttackableEnemy.cs" t="Include" />
+            <e p="ChaserState.cs" t="Include" />
+            <e p="Enemy.cs" t="Include" />
+            <e p="EnemyDamage.cs" t="Include" />
+            <e p="EnemyHPDebugger.cs" t="Include" />
+            <e p="FollowAndAttack.cs" t="Include" />
+            <e p="HpBar.cs" t="Include" />
+            <e p="SteroidAgent.cs" t="Include" />
+          </e>
+          <e p="Events.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="HelloInputs.cs" t="Include" />
+          <e p="InputManager.cs" t="Include" />
+          <e p="NonPersistantSingleton.cs" t="Include" />
+          <e p="ParticlesPool.cs" t="Include" />
+          <e p="Player" t="Include">
+            <e p="AttackablePlayer.cs" t="Include" />
+            <e p="CameraSmoothFollow.cs" t="Include" />
+            <e p="Player.cs" t="Include" />
+            <e p="PlayerAnimations.cs" t="Include" />
+            <e p="PlayerMotion.cs" t="Include" />
+            <e p="Sword.cs" t="Include" />
+          </e>
+          <e p="TitleScreen" t="Include">
+            <e p="TitleScreen.cs" t="Include" />
+          </e>
+          <e p="Util.cs" t="Include" />
+          <e p="WalkableWorld" t="Include">
+            <e p="AutomatedBaker.cs" t="Include" />
+            <e p="Bottom.cs" t="Include" />
+            <e p="Builder.cs" t="Include" />
+            <e p="ChoiceOnDialogue.cs" t="Include" />
+            <e p="ChoiceOnTouch.cs" t="Include" />
+            <e p="NavMeshBakeable.cs" t="Include" />
+            <e p="Platform.cs" t="Include" />
+            <e p="Road.cs" t="Include" />
+          </e>
+          <e p="Water" t="Include">
+            <e p="WaterArea.cs" t="Include" />
+            <e p="WaterMaterialSwitcher.cs" t="Include" />
+            <e p="WaterPropertyBlockSetter.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="DepthFog.shader" t="Include" />
+          <e p="WaterOpaque" t="Include">
+            <e p="Depth" t="Include">
+              <e p="DiffuseColorDepthWater.shader" t="Include" />
+              <e p="DiffuseDepthWater.shader" t="Include" />
+            </e>
+            <e p="DiffuseWaterOpaque.shader" t="Include" />
+            <e p="Height" t="Include">
+              <e p="DiffuseColorHeightWater.shader" t="Include" />
+              <e p="DiffuseHeightWater.shader" t="Include" />
+            </e>
+          </e>
+          <e p="WaterTwoSide" t="Include">
+            <e p="Depth" t="Include">
+              <e p="DiffuseColorDepthWaterTwoSide.shader" t="Include" />
+              <e p="DiffuseDepthWaterTwoSide.shader" t="Include" />
+            </e>
+            <e p="Height" t="Include">
+              <e p="DiffuseColorHeightWaterTwoSide.shader" t="Include" />
+              <e p="DiffuseHeightWaterTwoSide.shader" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="DT-Final.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+    <e p="C:\Users\Sehgel\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Sehgel\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_DT-Final.1863282250.00" t="ExcludeRecursive" />
+  </component>
+</project>
