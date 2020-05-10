@@ -6,8 +6,12 @@ public class Road : MonoBehaviour {
   public Builder visual;
   public Transform obstacles;
   public Platform connected;
+    [Header("Sound")]
+    public AudioManager audioManager;
+    [Header("construct")]
+    public float constructVolume;
 
-  void OnEnable () {
+    void OnEnable () {
     Hide();
   }
 
@@ -21,5 +25,6 @@ public class Road : MonoBehaviour {
     visual.Show();
     obstacles.gameObject.SetActive(false);
     if (connected) connected.visual.Show();
+        audioManager.PlaySound(0, constructVolume);
   }
 }
