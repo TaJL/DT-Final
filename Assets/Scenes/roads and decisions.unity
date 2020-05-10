@@ -5870,6 +5870,8 @@ MonoBehaviour:
   visual: {fileID: 2822566517285545584}
   obstacles: {fileID: 7648725430137936807}
   connected: {fileID: 4579670476049778147}
+  audioManager: {fileID: 0}
+  constructVolume: 0
 --- !u!114 &8809924345509139048
 MonoBehaviour:
   m_ObjectHideFlags: 0
