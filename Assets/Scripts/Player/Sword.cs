@@ -19,8 +19,13 @@ public class Sword : MonoBehaviour {
   public ParticlesPool hit_particles;
   Coroutine _attack;
   public float omnidirectionalRadius = 0.1f;
-
-  private void Awake()
+    [Header("Sound")]
+    public AudioManager audioManager;
+    [Header("Swing")]
+    public float swingVolume;
+    public float swingPitch;
+    public float swingVariation;
+    private void Awake()
   {
     hit_particles.Initialize();
   }
@@ -63,7 +68,8 @@ public class Sword : MonoBehaviour {
 
     if (onAttack != null) onAttack();
     _attack = StartCoroutine(_Attack());
-  }
+        audioManager.PlaySound(0, swingVolume, swingVariation, swingPitch);
+    }
 
   IEnumerator _Attack () {
     float elapsed = 0;
