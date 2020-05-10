@@ -38,12 +38,13 @@ public class Sword : MonoBehaviour {
     if (attackable) {
       Vector3 direction = c.transform.position - motion.transform.position;
       if (direction.magnitude < omnidirectionalRadius ||
-          (Vector3.SignedAngle(motion.transform.right, direction, Vector3.up) > 0 &&
-           Vector3.Angle(motion.attackDirection, direction) < angle)) {
+          Vector3.Angle(motion.attackDirection, direction) < angle) {
+
         attackable.MakeDamage(damage, transform.position, pushForce);
         CameraSmoothFollow.Instance.Shake(0.25f,0.1f);
         CameraSmoothFollow.Instance.Freeze(0.25f);
         hit_particles.PlayParticleAt(c.transform.position + (c.transform.position - transform.position)/2);
+
       }
     }
   }

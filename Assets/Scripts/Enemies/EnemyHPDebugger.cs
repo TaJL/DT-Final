@@ -14,6 +14,8 @@ public class EnemyHPDebugger : MonoBehaviour {
     text.text = attackable.hp + "";
     transform.forward = transform.position - Camera.main.transform.position;
 
+    if (!r) return;
+
     if (!attackable.cooldown.IsOver) {
       r.material.color = damaged;
     } else {
