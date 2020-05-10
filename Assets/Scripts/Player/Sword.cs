@@ -4,6 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Sword : MonoBehaviour {
+  public event System.Action onAttack;
+
   public ParticleSystem trail;
   public float angle = 50;
   public float duration = 0.25f;
@@ -58,6 +60,8 @@ public class Sword : MonoBehaviour {
     if (NpcDialoguePlaceholder.Instance.IsVisible) return;
     if (!attack.IsOver) return;
     if (_attack != null) return;
+
+    if (onAttack != null) onAttack();
     _attack = StartCoroutine(_Attack());
   }
 

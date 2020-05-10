@@ -2,5 +2,5 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class AttackableEnemy : Attackable {
+public class AttackablePlayer : Attackable {
 }
