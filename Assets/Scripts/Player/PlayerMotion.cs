@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class PlayerMotion : MonoBehaviour {
   public float speed = 8;
   public Vector3 direction;
+  public Vector3 directionLerped = new Vector3();
 
   void Awake () {
     Transform viewport = Camera.main.transform.parent;
@@ -24,9 +25,9 @@ public class PlayerMotion : MonoBehaviour {
 
   void FixedUpdate () {
     if (direction.magnitude > 0.2f) {
-      transform.forward = direction;
+      transform.forward = Vector3.Lerp(transform.forward, direction, 0.8f);
     }
-
-    transform.position += direction * speed * Time.deltaTime;
+        directionLerped = Vector3.Lerp(directionLerped, direction, 0.8f);
+    transform.position += directionLerped * speed * Time.deltaTime;
   }
 }

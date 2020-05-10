@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 86b41d715b0eaa24f865e8249d697800
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 90
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: '{hazel grace}'
+  fontNames:
+  - '{hazel grace}'
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d6f4bb59e9e6072409ff4cfca6e4f7fb, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
