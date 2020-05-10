@@ -7,4 +7,10 @@ public class Util {
     target.y = y;
     return target;
   }
+
+  public static Vector3 SetX (Vector3 target, float x) {
+    target.x = x;
+    return target;
+  }
+
 }
