@@ -169,6 +169,14 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Look"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""7cf5c2f1-2ddf-4f26-91ca-a238cdff0e65"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -290,6 +298,72 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MeleeAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""keyboard"",
+                    ""id"": ""690c3a8f-0d12-4b68-bf7b-385fc7897b81"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": ""ScaleVector2(x=0.5,y=0.5)"",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""729ea4c5-1f64-4209-b866-244b1c1e2fb6"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""87c51a19-c286-4d3f-a406-63a5e3bd56e8"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""88d83bc0-be7a-40e4-87b4-98a9feee97ef"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""c0720a89-29d2-47c3-b41e-cf647e7d64bb"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a8ade25-6824-47d7-84be-fc509d631d58"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -467,6 +541,7 @@ public class @TheInput : IInputActionCollection, IDisposable
         m_WorldActions_Talk = m_WorldActions.FindAction("Talk", throwIfNotFound: true);
         m_WorldActions_Move = m_WorldActions.FindAction("Move", throwIfNotFound: true);
         m_WorldActions_MeleeAttack = m_WorldActions.FindAction("MeleeAttack", throwIfNotFound: true);
+        m_WorldActions_Look = m_WorldActions.FindAction("Look", throwIfNotFound: true);
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
         m_Dialogue_Skip = m_Dialogue.FindAction("Skip", throwIfNotFound: true);
@@ -584,6 +659,7 @@ public class @TheInput : IInputActionCollection, IDisposable
     private readonly InputAction m_WorldActions_Talk;
     private readonly InputAction m_WorldActions_Move;
     private readonly InputAction m_WorldActions_MeleeAttack;
+    private readonly InputAction m_WorldActions_Look;
     public struct WorldActionsActions
     {
         private @TheInput m_Wrapper;
@@ -591,6 +667,7 @@ public class @TheInput : IInputActionCollection, IDisposable
         public InputAction @Talk => m_Wrapper.m_WorldActions_Talk;
         public InputAction @Move => m_Wrapper.m_WorldActions_Move;
         public InputAction @MeleeAttack => m_Wrapper.m_WorldActions_MeleeAttack;
+        public InputAction @Look => m_Wrapper.m_WorldActions_Look;
         public InputActionMap Get() { return m_Wrapper.m_WorldActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -609,6 +686,9 @@ public class @TheInput : IInputActionCollection, IDisposable
                 @MeleeAttack.started -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMeleeAttack;
                 @MeleeAttack.performed -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMeleeAttack;
                 @MeleeAttack.canceled -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnMeleeAttack;
+                @Look.started -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnLook;
             }
             m_Wrapper.m_WorldActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -622,6 +702,9 @@ public class @TheInput : IInputActionCollection, IDisposable
                 @MeleeAttack.started += instance.OnMeleeAttack;
                 @MeleeAttack.performed += instance.OnMeleeAttack;
                 @MeleeAttack.canceled += instance.OnMeleeAttack;
+                @Look.started += instance.OnLook;
+                @Look.performed += instance.OnLook;
+                @Look.canceled += instance.OnLook;
             }
         }
     }
@@ -720,6 +803,7 @@ public class @TheInput : IInputActionCollection, IDisposable
         void OnTalk(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnMeleeAttack(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
     }
     public interface IDialogueActions
     {
