@@ -118,7 +118,7 @@ Material:
     - _UVSec: 0
     - _UnderLineSmoothness: 0.4
     - _UnderwaterBias: 1
-    - _UnderwaterFog: 0.11
+    - _UnderwaterFog: 0.02
     - _VertexNormalsFactor: 1
     - _WaterHeight: 0
     - _WaveLength: 1
