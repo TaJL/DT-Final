@@ -6,6 +6,10 @@ public class Platform : MonoBehaviour {
   public Builder visual;
   public bool visible = false;
 
+  void Reset () {
+    visual = GetComponentInChildren<Builder>();
+  }
+
   void OnEnable () {
     if (!visible) visual.Hide();
   }

@@ -14,10 +14,16 @@ public class Builder : MonoBehaviour {
   }
 
   public void Show () {
+    float wait = 0;
     foreach (Transform child in transform) {
-      tweener.TweenTo(child,new Vector3(child.position.x, transform.position.y, child.position.z),null,Random.Range(waitingTime.x,waitingTime.y));
-//      StartCoroutine(_PopItTo(child, transform.position.y));
+      StartCoroutine(_TweenTo(child, wait));
+      wait += Random.Range(waitingTime.x,waitingTime.y);
     }
+  }
+
+  IEnumerator _TweenTo (Transform thing, float wait) {
+    yield return new WaitForSeconds(wait);
+    tweener.TweenTo(thing,new Vector3(thing.position.x, transform.position.y, thing.position.z),null,1);
   }
 
   IEnumerator _PopItTo (Transform thing, float y) {
