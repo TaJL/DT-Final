@@ -3,19 +3,37 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
+using UnityEngine.Rendering;
 
 public class CameraSmoothFollow : NonPersistantSingleton<CameraSmoothFollow> {
   public float smoothTime = 0.3f;
   public Transform target;
   public Vector3 speed;
     
-  
+  private CommandBuffer keepDepthTexture;
+
+  private Camera camera;
+  private void OnEnable()
+  {
+     
+      if (keepDepthTexture == null) {
+          keepDepthTexture = new CommandBuffer();
+          keepDepthTexture.name = "Keep MainCamera Depth Texture";
+          keepDepthTexture.SetGlobalTexture("_MainCameraDepthTexture", BuiltinRenderTextureType.Depth);
+     
+          Camera.main.depthTextureMode |= DepthTextureMode.Depth;
+          Camera.main.AddCommandBuffer(CameraEvent.BeforeForwardAlpha, keepDepthTexture);
+      }
+
+  }
   private void Start()
   {
-      Camera.main.depthTextureMode= Camera.main.depthTextureMode | DepthTextureMode.Depth;
+      camera = Camera.main;
+      camera.depthTextureMode= Camera.main.depthTextureMode | DepthTextureMode.Depth;
   }
 
   void FixedUpdate () {
+      print(Vector3.Distance(transform.position,camera.transform.position));
     transform.position = Vector3.SmoothDamp(transform.position, target.position,
                                             ref speed, smoothTime);
   }

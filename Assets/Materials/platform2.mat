@@ -7,13 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: fog
-  m_Shader: {fileID: 4800000, guid: 4c2da9e05bb2f684db577c5e644fb4bc, type: 3}
-  m_ShaderKeywords: _FADING_ON
+  m_Name: platform2
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 5000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -43,19 +43,11 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _FoamTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NormalMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -67,71 +59,42 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SpecGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _WaterTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Amplitude: 1
-    - _BlendOp: 0
+    - _BorderWidth: 0
     - _BumpScale: 1
-    - _CameraFadingEnabled: 0
-    - _CameraFarFadeDistance: 2
-    - _CameraNearFadeDistance: 1
-    - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DiffuseFactor: 0
-    - _DistortionBlend: 0.5
-    - _DistortionEnabled: 0
-    - _DistortionStrength: 1
-    - _DistortionStrengthScaled: 0.1
     - _DstBlend: 0
-    - _EmissionEnabled: 0
-    - _FlipbookMode: 0
-    - _FoamTickness: 0
-    - _Gloss: 0.1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _LightingEnabled: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
-    - _SoftParticlesEnabled: 1
-    - _SoftParticlesFarFadeDistance: 1
-    - _SoftParticlesNearFadeDistance: 0
-    - _SpecularFactor: 0
     - _SpecularHighlights: 1
-    - _SpecularHighlightsBias: 0
-    - _Speed: 1
     - _SrcBlend: 1
-    - _TextureSpeed: 50
-    - _TextureTransparency: 0
-    - _TextureVisibility: 0.744
-    - _Transparency: 1
+    - _TextureVisibility: 1
+    - _Transparency: 0
     - _UVSec: 0
-    - _UnderLineSmoothness: 0.341
-    - _UnderwaterBias: 1
-    - _UnderwaterFog: 0.151
-    - _VertexNormalsFactor: 1
+    - _UnderLineSmoothness: 1
+    - _UnderwaterBias: 0.665
+    - _UnderwaterFog: 0.52
+    - _WaterDeep: 0
     - _WaterHeight: 0
-    - _WaveLength: 1
+    - _WaterMinAlpha: 0
     - _ZWrite: 1
     m_Colors:
-    - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0.4056604, g: 0.044010334, b: 0.06873854, a: 1}
+    - _BorderColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.8113208, g: 0.24875402, b: 0.30601552, a: 1}
     - _DistTiling: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FoamColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MoveDirection: {r: 0, g: 7.69, b: 0, a: 0}
-    - _SoftParticleFadeParams: {r: 0, g: 1, b: 0, a: 0}
-    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _MoveDirection: {r: 0, g: 0, b: 0, a: 0}
     - _Tiling: {r: 1, g: 1, b: 1, a: 1}
-    - _WaterColor: {r: 0, g: 1, b: 0.9394505, a: 1}
+    - _WaterColor: {r: 1, g: 1, b: 1, a: 1}

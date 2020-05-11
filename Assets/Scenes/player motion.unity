@@ -291,7 +291,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 5.5e-44, z: 1, w: 1.6114932e-38}
+  m_BoundingSphereOverride: {x: 0, y: 3.59e-43, z: 0, w: 3e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1526,7 +1526,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 273.7, y: 0}
+  m_SizeDelta: {x: 273.58975, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754053441
 MonoBehaviour:
@@ -3099,7 +3099,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 115, y: 0}
+  m_SizeDelta: {x: 114.953674, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1675883605
 MonoBehaviour:
@@ -3323,7 +3323,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 115, y: 0}
+  m_SizeDelta: {x: 114.95366, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108716590
 MonoBehaviour:
@@ -4829,22 +4829,22 @@ PrefabInstance:
     - target: {fileID: 1250248265288866284, guid: e3b2e61f6de8bce4ca6bcb6dfb18daa3,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 8.91e-43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1250248265288866284, guid: e3b2e61f6de8bce4ca6bcb6dfb18daa3,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: -2.1742954
+      value: 2.3510647e-38
       objectReference: {fileID: 0}
     - target: {fileID: 1250248265288866284, guid: e3b2e61f6de8bce4ca6bcb6dfb18daa3,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 8.91e-43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1250248265288866284, guid: e3b2e61f6de8bce4ca6bcb6dfb18daa3,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 1.4034e-41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6656357630410884864, guid: e3b2e61f6de8bce4ca6bcb6dfb18daa3,
         type: 3}

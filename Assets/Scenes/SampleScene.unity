@@ -506,7 +506,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0.21875, z: 0.046875, w: -0.046875}
+  m_BoundingSphereOverride: {x: 8.93e-43, y: NaN, z: 8.94e-43, w: 1.4148408e+23}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1733,10 +1733,10 @@ RectTransform:
   m_Father: {fileID: 1239807801}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 273.58975, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 780, y: -67.47684}
+  m_SizeDelta: {x: 0, y: 114.953674}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754053441
 MonoBehaviour:
@@ -3864,10 +3864,10 @@ RectTransform:
   m_Father: {fileID: 1239807801}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 114.953674, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 790, y: -67.47684}
+  m_SizeDelta: {x: 0, y: 114.953674}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1675883605
 MonoBehaviour:
@@ -4730,10 +4730,10 @@ RectTransform:
   m_Father: {fileID: 1064522189}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 114.95366, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 10, y: -67.47683}
+  m_SizeDelta: {x: 0, y: 114.95366}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108716590
 MonoBehaviour:
@@ -5931,6 +5931,8 @@ MonoBehaviour:
   visual: {fileID: 2822566517285545584}
   obstacles: {fileID: 7648725430137936807}
   connected: {fileID: 4579670476049778147}
+  audioManager: {fileID: 0}
+  constructVolume: 0
 --- !u!114 &8809924345509139048
 MonoBehaviour:
   m_ObjectHideFlags: 0
