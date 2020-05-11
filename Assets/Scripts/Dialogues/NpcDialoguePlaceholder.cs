@@ -47,7 +47,7 @@ public class NpcDialoguePlaceholder : NonPersistantSingleton<NpcDialoguePlacehol
 
     for (int i=0; i<entry.message.Length && !jump; i++) {
       float x = 0;
-      while (x < 0.05f) {
+      while (x < 0.025f) {
         yield return null;
         x += Time.deltaTime;
         if (jump) break;

@@ -9571,7 +9571,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 89cfe9ffabb8cf84b885af8ecda2d16a, type: 2}
+  - {fileID: 2100000, guid: ae10dd4aee8adf24abfb01b1f0acf90f, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -14517,7 +14517,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 89cfe9ffabb8cf84b885af8ecda2d16a, type: 2}
+  - {fileID: 2100000, guid: ae10dd4aee8adf24abfb01b1f0acf90f, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -14954,7 +14954,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 1.45
   m_BaseOffset: 0.8
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 7
   m_ObstacleAvoidanceType: 4
 --- !u!114 &6656357630410884867
 MonoBehaviour:
@@ -14986,10 +14986,12 @@ MonoBehaviour:
   speed: 12
   attackDirection: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
+  relativeDirection: {x: 0, y: 0, z: 0}
   smoothedMotion: {x: 0, y: 0, z: 0}
   smoothedDirection: {x: 0, y: 0, z: 0}
   motionSmoothSpeed: 5
   directionSmoothSpeed: 10
+  viewport: {fileID: 0}
 --- !u!114 &571107252
 MonoBehaviour:
   m_ObjectHideFlags: 0

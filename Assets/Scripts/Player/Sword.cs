@@ -62,7 +62,7 @@ public class Sword : MonoBehaviour {
   }
 
   public void Attack () {
-    if (NpcDialoguePlaceholder.Instance.IsVisible) return;
+    // if (NpcDialoguePlaceholder.Instance.IsVisible) return;
     if (!attack.IsOver) return;
     if (_attack != null) return;
 

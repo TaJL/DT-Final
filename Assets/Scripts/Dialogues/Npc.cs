@@ -20,11 +20,21 @@ public class Npc : MonoBehaviour {
 
   public RuntimeAnimatorController animController;
   public bool doneTalking = false;
+  public bool omniscientDialogue = false;
 
   Coroutine _speak;
 
+  void Awake () {
+    if (omniscientDialogue) {
+      InputManager.input.WorldActions.Talk.started += ctx => {
+        if (current == 0) return;
+        Speak();
+      };
+    }
+  }
+
   public void Speak () {
-    if (doneTalking || (decision != Decision.None && current == 0)) return;
+    if (decision != Decision.None && current == 0) return;
 
     if (_speak == null) {
       _speak = StartCoroutine(_Speak());
@@ -40,21 +50,28 @@ public class Npc : MonoBehaviour {
 
     PlayerDecisions.Instance.Hide();
     PlayerDecisions.onDecisionMade -= HandleDecision;
-    actionIndicator.SetActive(false);
+    if (!omniscientDialogue) {
+      actionIndicator.SetActive(false);
+    }
   }
 
   public void IndicateActiveForTalk () {
-    actionIndicator.SetActive(decision == Decision.None && current == 0);
+    if (!omniscientDialogue) {
+      actionIndicator.SetActive(decision == Decision.None && current == 0);
+    }
   }
 
   IEnumerator _Speak () {
     if (NpcDialoguePlaceholder.Instance.IsVisible && current >= message.Length) {
       NpcDialoguePlaceholder.Instance.SetVisibility(false);
       current = 0;
+      doneTalking = true;
+      if (onTalkingFinished != null) onTalkingFinished();
       yield break;
     }
 
     if (current == 0) {
+      if (NpcDialoguePlaceholder.Instance.IsVisible) yield break;
       NpcDialoguePlaceholder.Instance.SetVisibility(true);
     }
 
@@ -70,7 +87,6 @@ public class Npc : MonoBehaviour {
         PlayerDecisions.Instance.Activate(this);
         PlayerDecisions.onDecisionMade += HandleDecision;
       }
-      if (onTalkingFinished != null) onTalkingFinished();
     }
   }
 

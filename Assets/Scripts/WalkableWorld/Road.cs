@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -13,6 +14,11 @@ public class Road : MonoBehaviour {
 
     void OnEnable () {
     Hide();
+  }
+
+  void Reset () {
+    visual = GetComponentInChildren<Builder>();
+    obstacles = GetComponentInChildren<NavMeshObstacle>().transform.parent;
   }
 
   public void Hide () {

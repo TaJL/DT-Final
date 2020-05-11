@@ -6,10 +6,11 @@ public class ChoiceOnTouch : MonoBehaviour {
   public Road[] choices;
 
   void OnTriggerEnter (Collider c) {
-    if (c.gameObject.CompareTag("Player")) {
+    if (c.GetComponentInParent<Player>()) {
       foreach (Road choice in choices) {
         choice.Show();
       }
+
       Destroy(this);
     }
   }
