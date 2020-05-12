@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class PlayerMotion : MonoBehaviour {
+  public Gun gun;
   public float speed = 8;
   public Vector3 attackDirection;
   public Vector3 direction;
@@ -46,7 +47,7 @@ public class PlayerMotion : MonoBehaviour {
 
     smoothedMotion =
       Vector3.MoveTowards(smoothedMotion, relativeDirection,
-                          motionSmoothSpeed * Time.deltaTime);
+                          motionSmoothSpeed * Time.deltaTime * (gun.shooting? 0.2f: 1));
 
     transform.position += smoothedMotion * speed * Time.deltaTime;
   }

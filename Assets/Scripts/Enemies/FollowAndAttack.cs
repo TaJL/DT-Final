@@ -78,7 +78,7 @@ public class FollowAndAttack : MonoBehaviour {
     damage.enabled = false;
   }
   IEnumerator _Attack () {
-    Sfx.Instance.speaker.volume = Random.Range(0.1f, 0.3f);
+    Sfx.Instance.speaker.volume = Random.Range(0.02f, 0.05f);
     Sfx.Instance.speaker.pitch = Random.Range(0.7f, 1.2f);
     Sfx.Instance.speaker.PlayOneShot(charge);
     // Sfx.Instance.speaker.volume = Sfx.Instance.speaker.pitch = 1;
@@ -101,7 +101,7 @@ public class FollowAndAttack : MonoBehaviour {
 
     yield return new WaitForSeconds(chargingTime/2f);
 
-    Sfx.Instance.speaker.volume = Random.Range(0.1f, 0.3f);
+    Sfx.Instance.speaker.volume = Random.Range(0.02f, 0.05f);
     Sfx.Instance.speaker.pitch = Random.Range(0.7f, 1.2f);
     Sfx.Instance.speaker.PlayOneShot(attack);
     // Sfx.Instance.speaker.volume = Sfx.Instance.speaker.pitch = 1;

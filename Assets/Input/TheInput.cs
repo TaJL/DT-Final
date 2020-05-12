@@ -185,6 +185,14 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""040f7bbe-ec69-4ccf-a796-c602cb26bf74"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -418,6 +426,28 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""action"": ""Shield"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""57e989a4-92b8-426a-92e7-a9b6c95c9042"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ffbea4c4-8b95-4bf6-9811-99fc42b99fb3"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -606,6 +636,7 @@ public class @TheInput : IInputActionCollection, IDisposable
         m_WorldActions_MeleeAttack = m_WorldActions.FindAction("MeleeAttack", throwIfNotFound: true);
         m_WorldActions_Look = m_WorldActions.FindAction("Look", throwIfNotFound: true);
         m_WorldActions_Shield = m_WorldActions.FindAction("Shield", throwIfNotFound: true);
+        m_WorldActions_Shoot = m_WorldActions.FindAction("Shoot", throwIfNotFound: true);
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
         m_Dialogue_Skip = m_Dialogue.FindAction("Skip", throwIfNotFound: true);
@@ -725,6 +756,7 @@ public class @TheInput : IInputActionCollection, IDisposable
     private readonly InputAction m_WorldActions_MeleeAttack;
     private readonly InputAction m_WorldActions_Look;
     private readonly InputAction m_WorldActions_Shield;
+    private readonly InputAction m_WorldActions_Shoot;
     public struct WorldActionsActions
     {
         private @TheInput m_Wrapper;
@@ -734,6 +766,7 @@ public class @TheInput : IInputActionCollection, IDisposable
         public InputAction @MeleeAttack => m_Wrapper.m_WorldActions_MeleeAttack;
         public InputAction @Look => m_Wrapper.m_WorldActions_Look;
         public InputAction @Shield => m_Wrapper.m_WorldActions_Shield;
+        public InputAction @Shoot => m_Wrapper.m_WorldActions_Shoot;
         public InputActionMap Get() { return m_Wrapper.m_WorldActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -758,6 +791,9 @@ public class @TheInput : IInputActionCollection, IDisposable
                 @Shield.started -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnShield;
                 @Shield.performed -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnShield;
                 @Shield.canceled -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnShield;
+                @Shoot.started -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnShoot;
+                @Shoot.performed -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnShoot;
+                @Shoot.canceled -= m_Wrapper.m_WorldActionsActionsCallbackInterface.OnShoot;
             }
             m_Wrapper.m_WorldActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -777,6 +813,9 @@ public class @TheInput : IInputActionCollection, IDisposable
                 @Shield.started += instance.OnShield;
                 @Shield.performed += instance.OnShield;
                 @Shield.canceled += instance.OnShield;
+                @Shoot.started += instance.OnShoot;
+                @Shoot.performed += instance.OnShoot;
+                @Shoot.canceled += instance.OnShoot;
             }
         }
     }
@@ -877,6 +916,7 @@ public class @TheInput : IInputActionCollection, IDisposable
         void OnMeleeAttack(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnShield(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
     }
     public interface IDialogueActions
     {
