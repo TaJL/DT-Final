@@ -6,6 +6,7 @@ public class Attackable : MonoBehaviour {
   public event System.Action onDead;
   public event System.Action onDamageTaken;
 
+  public bool CanTakeDamage { get => !dead && cooldown.IsOver; }
   public int maxHP;
   public int hp;
   public Cooldown cooldown;
@@ -20,11 +21,15 @@ public class Attackable : MonoBehaviour {
     cooldown.Update();
   }
 
-  public void MakeDamage (int damage, Vector3 source, float push) {
-    if (dead) return;
-    if (!cooldown.IsOver) return;
+  public void Push (Vector3 source, float push) {
+    body.AddForce((transform.position - source).normalized * push, ForceMode.Impulse);    
+  }
+
+  public virtual void MakeDamage (int damage, Vector3 source, float push) {
+    if (!CanTakeDamage) return;
+
     hp -= damage;
-    body.AddForce((transform.position - source).normalized * push, ForceMode.Impulse);
+    Push(source, push);
     cooldown.Reset();
 
     if (hp <= 0) {

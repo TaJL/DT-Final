@@ -137,7 +137,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Tintinsidecolor: 1
-    - _Transparency: 1
+    - _Transparency: 0
     - _UVSec: 0
     - _UnderLineSmoothness: 0.676
     - _UnderwaterBias: 1

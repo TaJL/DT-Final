@@ -7,6 +7,7 @@ public class PlayerAnimations : MonoBehaviour {
   public Animator animator;
   public Attackable hp;
   public ParticleSystem attackedFeedback;
+  public Shield shield;
 
   void OnEnable () {
     GetComponentInChildren<Sword>().onAttack += AttackAnimation;
@@ -37,7 +38,12 @@ public class PlayerAnimations : MonoBehaviour {
   }
 
   void Update () {
-    animator.SetFloat("speed", motion.smoothedMotion.magnitude);
+    if (motion.enabled) {
+      animator.SetFloat("speed", motion.smoothedMotion.magnitude);
+    } else {
+      animator.SetFloat("speed", 0);
+    }
     animator.SetBool("in pain", !hp.cooldown.IsOver);
+    animator.SetBool("shielded", shield.isActive);
   }
 }
