@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class Attackable : MonoBehaviour {
   public event System.Action onDead;
   public event System.Action onDamageTaken;
+  public event System.Action onHealed;
 
   public bool IsFull { get => hp >= maxHP; }
   public bool invulnerable = false;
@@ -25,6 +26,7 @@ public class Attackable : MonoBehaviour {
 
   public void Heal () {
     hp = maxHP;
+    if (onHealed != null) onHealed();
   }
 
   public void Push (Vector3 source, float push) {

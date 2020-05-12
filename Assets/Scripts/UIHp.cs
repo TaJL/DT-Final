@@ -11,6 +11,7 @@ public class UIHp : MonoBehaviour {
   void OnEnable () {
     _hp = GameObject.FindWithTag("Player").GetComponentInChildren<AttackablePlayer>();
     _hp.onDamageTaken += HandleDamage;
+    _hp.onHealed += Heal;
   }
 
   void Reset () {
@@ -22,5 +23,9 @@ public class UIHp : MonoBehaviour {
     if ((_hp.hp - 1) == transform.GetSiblingIndex()) {
       animator.SetTrigger("hit");
     }
+  }
+
+  public void Heal () {
+    animator.SetTrigger("heal");
   }
 }

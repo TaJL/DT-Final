@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class SmoothedVolume : MonoBehaviour {
+  public event System.Action onVolumeZero;
+
   public AudioSource speaker;
   public float target;
   public float speed;
@@ -14,5 +16,12 @@ public class SmoothedVolume : MonoBehaviour {
 
   void Update () {
     speaker.volume = Mathf.SmoothDamp(speaker.volume, target, ref speed, time);
+    if (speaker.volume < 0.01f && onVolumeZero != null) {
+      onVolumeZero();
+    }
+  }
+
+  public void ResetEvents () {
+    onVolumeZero = null;
   }
 }

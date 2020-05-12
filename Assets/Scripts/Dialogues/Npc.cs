@@ -33,6 +33,12 @@ public class Npc : MonoBehaviour {
     }
   }
 
+  void OnDisable () {
+    if (current > 0) {
+      NpcDialoguePlaceholder.Instance.SetVisibility(false);
+    }
+  }
+
   public void Speak () {
     if ((blocksOnDecission && decision != Decision.None)
         && current == 0) return;
