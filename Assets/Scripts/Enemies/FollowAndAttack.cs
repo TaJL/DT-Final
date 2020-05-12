@@ -59,11 +59,20 @@ public class FollowAndAttack : MonoBehaviour {
     transform.LookAt(target);
     transform.forward = Vector3.Scale(new Vector3(1,0,1), transform.forward);
 
-    yield return new WaitForSeconds(chargingTime);
+    float elapsed = 0;
+    while (elapsed < chargingTime/2f) {
+      elapsed += Time.deltaTime;
+      target = close.target? close.target.transform.position: target;
+      transform.LookAt(target);
+      transform.forward = Vector3.Scale(new Vector3(1,0,1), transform.forward);
+      yield return null;
+    }
+
+    yield return new WaitForSeconds(chargingTime/2f);
 
     animator.SetTrigger("attack step");
     damage.enabled = true;
-    float elapsed = 0;
+    elapsed = 0;
     Vector3 direction = (target - motionTarget.position).normalized;
     while (elapsed < dashingTime) {
       motionTarget.position += direction * dashAttackSpeed * Time.deltaTime;

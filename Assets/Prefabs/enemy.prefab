@@ -316,6 +316,7 @@ MonoBehaviour:
   animator: {fileID: 9140226029958848802}
   behaviour: {fileID: 9140226030759647290}
   agent: {fileID: 9140226030759647288}
+  destroyOnOver: 1
 --- !u!1 &9140226030853025979
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6bf783d29fdda4f98d01d5e8d41350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invulnerable: 0
   maxHP: 3
   hp: 3
   cooldown:
