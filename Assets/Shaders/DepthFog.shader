@@ -115,12 +115,13 @@ Shader "Unlit/DepthFog"
                 float3 underwater_composite = underwater_color*_UnderwaterBias * max(lerp(1-_UnderwaterFog,1,waterDepthDifference01),0);
                 
                 float amount = 1-clamp(_UnderwaterBias * max(lerp(1-_UnderwaterFog,1,waterDepthDifference01),0),0,1);
-                return float4(lerp(underwater_color.rgb,_Color.rgb,amount),1);
+
+                return float4(lerp(underwater_color.rgb,_Color.rgb,amount)  ,1);
 
                 if( step(underwater_composite.r,0) <= 0)
                     return float4(underwater_composite* _UnderLineSmoothness,_Transparency) ;
                     //return float4(underwater_composite* _UnderLineSmoothness,_Transparency) ;
-                 return ( _Color);
+                 return ( _Color*tex_color);
                 // return float4(((_Color.rgb * (1 - _TextureTransparency) + (tex_color * _TextureTransparency)) + (float4(background_color* _TextureTransparency,1)) )  * (diffuse_coeficient ),1)  + (_FoamColor * step((1 -_FoamTickness) ,waterDepthDifference01 )) + specular_coeficient * _SpecularFactor;
             }
             
