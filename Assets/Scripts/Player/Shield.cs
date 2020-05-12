@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Shield : MonoBehaviour {
+  public Sword sword;
+  public Gun gun;
   public bool isActive;
   public ParticleSystem hitEffect;
   public GameObject model;
@@ -16,10 +18,15 @@ public class Shield : MonoBehaviour {
     InputManager.input.WorldActions.Shield.started += ctx => usingShield = true;
     InputManager.input.WorldActions.Shield.started += ctx => Activate();
     InputManager.input.WorldActions.Shield.canceled += ctx => usingShield = false;
+    sword.onAttack += Stop;
+  }
+
+  public void Stop () {
+    usingShield = false;
   }
 
   public void Activate () {
-    if (_shield == null) {
+    if (_shield == null && !gun.shooting) {
       _shield = StartCoroutine(_Activate());
     }
   }
