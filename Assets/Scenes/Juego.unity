@@ -548,7 +548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrototype: {fileID: 710692359130868432, guid: 3fe570ed6cec8374384908383cfe5c04,
     type: 3}
-  waves: 000000000100000002000000
+  waves: 000000000100000000000000
   current: 0
   synchronized:
   - {fileID: 27388347}
@@ -2600,7 +2600,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 114.953674, y: 0}
+  m_SizeDelta: {x: 115, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &127862607
 Animator:
@@ -7129,6 +7129,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 395286878}
+  - component: {fileID: 395286881}
+  - component: {fileID: 395286880}
+  - component: {fileID: 395286879}
   m_Layer: 0
   m_Name: others
   m_TagString: Untagged
@@ -7155,6 +7158,53 @@ Transform:
   m_Father: {fileID: 1084695495}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &395286879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395286877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c0a248dfe1d7647b3a55d242c5b6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decisionTaken: {fileID: 40794507}
+  toActivate: {fileID: 409940002}
+  value: 0
+--- !u!114 &395286880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395286877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aeef31496a432344a6da9e176ba3460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 1208257266}
+  requiredDecision: 1
+  choices:
+  - {fileID: 79491657}
+--- !u!114 &395286881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395286877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aeef31496a432344a6da9e176ba3460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 1208257266}
+  requiredDecision: 3
+  choices:
+  - {fileID: 40794507}
 --- !u!1 &396287567
 GameObject:
   m_ObjectHideFlags: 0
@@ -7488,6 +7538,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 1115211139}
   target: {fileID: 1407723221}
+  value: 1
+--- !u!114 &409940010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409940002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a2fa4a5ad1e64a4d864237f0812ff04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 1407723223}
+  target: {fileID: 1115211136}
+  value: 0
+--- !u!114 &409940011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409940002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a2fa4a5ad1e64a4d864237f0812ff04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 1407723223}
+  target: {fileID: 1208257263}
   value: 1
 --- !u!1 &424603374
 GameObject:
@@ -9167,7 +9247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &559876562
 Transform:
   m_ObjectHideFlags: 0
@@ -11857,7 +11937,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 273.58975, y: 0}
+  m_SizeDelta: {x: 273.7, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754053441
 MonoBehaviour:
@@ -18002,8 +18082,8 @@ MonoBehaviour:
   availableDecisions:
     North: Dejarlo vivir
     West: 
-    South: 
-    East: Matarlo
+    South: Matarlo
+    East: 
   decision: 0
   requiresDecision: 1
   message:
@@ -25362,7 +25442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d145cfb7c0c34a4c9ec2cc0e83369ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVisible: 0
+  isVisible: 1
 --- !u!1 &1685696849
 GameObject:
   m_ObjectHideFlags: 0
@@ -30598,7 +30678,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 114.95366, y: 0}
+  m_SizeDelta: {x: 115, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108716590
 MonoBehaviour:
