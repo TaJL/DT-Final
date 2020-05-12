@@ -164,9 +164,10 @@ Shader "Unlit/DepthObject"
                 float3 fragmentToLightSource = _WorldSpaceLightPos0.xyz - i.worldPos.xyz;
                 float distance = length(fragmentToLightSource);
                 float3 lightDirection = normalize(fragmentToLightSource);
-                float atten = 1/distance;
+                float atten = clamp((1/distance) - 0.01,0,1);
                 float intensity = length(_LightColor0.xyz);
-                return float4(atten.xxx*intensity * lerp(0,1,atten-0.05),1);
+
+                return float4(atten.xxx*intensity * lerp(0,1,atten) * (atten) * _LightColor0,1);
             }
             ENDCG
         }

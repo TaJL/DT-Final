@@ -7,23 +7,31 @@ public class Builder : MonoBehaviour {
   public Vector2 speedRange = new Vector2(20, 30);
   [SerializeField]
   public Tween tweener;
-  public void Hide () {
-    foreach (Transform child in transform) {
-      child.transform.position = Util.SetY(child.transform.position, Bottom.PosY);
+  public void Hide (bool pretty = false) {
+    if (pretty) {
+      float wait = 0;
+      foreach (Transform child in transform) {
+        StartCoroutine(_TweenTo(child, wait,Bottom.PosY));
+        wait += Random.Range(waitingTime.x, waitingTime.y);
+      }
+    } else {
+      foreach (Transform child in transform) {
+        child.transform.position = Util.SetY(child.transform.position, Bottom.PosY);
+      }
     }
   }
 
   public void Show () {
     float wait = 0;
     foreach (Transform child in transform) {
-      StartCoroutine(_TweenTo(child, wait));
+      StartCoroutine(_TweenTo(child, wait, transform.position.y));
       wait += Random.Range(waitingTime.x,waitingTime.y);
     }
   }
 
-  IEnumerator _TweenTo (Transform thing, float wait) {
+  IEnumerator _TweenTo (Transform thing, float wait, float pos) {
     yield return new WaitForSeconds(wait);
-    tweener.TweenTo(thing,new Vector3(thing.position.x, transform.position.y, thing.position.z),null,1);
+    tweener.TweenTo(thing,new Vector3(thing.position.x, pos, thing.position.z),null,null);
   }
 
   IEnumerator _PopItTo (Transform thing, float y) {

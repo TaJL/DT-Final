@@ -150,7 +150,7 @@ Material:
     m_Colors:
     - _Basecolor: {r: 0, g: 0, b: 0, a: 1}
     - _Bordercolor: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.8207547, g: 0.096787095, b: 0.33536735, a: 1}
+    - _Color: {r: 1, g: 0, b: 0.3333335, a: 1}
     - _DissolveColor: {r: 0, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0.6886792, g: 0.26312745, b: 0.26312745, a: 1}
     - _Emissiontexspeed: {r: 0, g: 0, b: 0, a: 0}

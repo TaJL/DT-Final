@@ -9,7 +9,7 @@ public class Tween
     [SerializeField] public float time = 1f;
     [SerializeField] public AnimationCurve curve = AnimationCurve.Linear(0,0,1,1);
 
-    public void TweenTo(Transform transform, Vector3? end_position = null, Quaternion? end_rotation = null, Vector3? end_scale = null, float speed_factor = 1)
+    public void TweenTo(Transform transform, Vector3? end_position = null, Quaternion? end_rotation = null, Vector3? end_scale = null)
     {
         IEnumerator Coroutine() {
             float counter = 0;
@@ -18,7 +18,7 @@ public class Tween
             var start_scale = transform.localScale;
             do
             {
-                counter = Mathf.Clamp01(counter + Time.deltaTime*speed_factor );
+                counter = Mathf.Clamp01(counter + Time.deltaTime/time );
                 if (end_position != null)
                     transform.position =
                         Vector3.LerpUnclamped(start_position, end_position.Value, curve.Evaluate(counter));
