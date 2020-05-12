@@ -34,7 +34,6 @@ public class Road : MonoBehaviour {
     obstacles.gameObject.SetActive(false);
 
     if (onDecisionTaken != null) onDecisionTaken();
-    print("decision taken! " + this);
 
     if (connected) connected.visual.Show();
         audioManager.PlaySound(0, constructVolume);

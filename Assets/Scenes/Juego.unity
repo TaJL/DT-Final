@@ -5879,7 +5879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &559876562
 Transform:
   m_ObjectHideFlags: 0
@@ -12954,7 +12954,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 162a50b348ec3624395bb3c6b4d6422f, type: 3}
+      objectReference: {fileID: 8300000, guid: 7114d9a7d97a39841953ae11c4aebd8b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c892e25289dd2084a955dd1c3202f331, type: 3}
 --- !u!1 &1214504668
@@ -19198,7 +19198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d145cfb7c0c34a4c9ec2cc0e83369ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVisible: 1
+  isVisible: 0
 --- !u!1 &1685696849
 GameObject:
   m_ObjectHideFlags: 0
