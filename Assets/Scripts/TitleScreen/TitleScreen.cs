@@ -15,6 +15,9 @@ public class TitleScreen : MonoBehaviour
     [SerializeField] private TextMeshProUGUI exitText;
     TheInput controls;
 
+    [SerializeField] private TextMeshProUGUI FinaleCount;
+    [SerializeField] private TextMeshProUGUI FinaleList;
+
     private void Awake()
     {
         controls = new TheInput();
@@ -23,7 +26,48 @@ public class TitleScreen : MonoBehaviour
         controls.TitleScreen.Select.performed += ctx => SelectOption();
         controls.TitleScreen.Enable();
 
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        SetFinalText();
+    }
+
+    private void SetFinalText()
+    {
+        FinaleList.text = "";
+        int finalsCount = 0;
+
+        if (FinaleCountHandler.Instance.balance)
+        {
+            finalsCount++;
+            FinaleList.text += "Balance";
+        }
+
+        if (FinaleCountHandler.Instance.maldad)
+        {
+            finalsCount++;
+            if (FinaleList.text != "")
+            {
+                FinaleList.text += " - ";
+            }
+            FinaleList.text += "Maldad";
+        }
+
+        if (FinaleCountHandler.Instance.moralRota)
+        {
+            finalsCount++;
+            if (FinaleList.text != "")
+            {
+                FinaleList.text += " - ";
+            }
+            FinaleList.text += "Moral Rota";
+        }
+
+        if (finalsCount != 0)
+        {
+            FinaleCount.text = "Finales: " + finalsCount.ToString() + "/3";
+        }
+        else
+            FinaleCount.enabled = false;
     }
 
     private void ActualiceToStartOption()
