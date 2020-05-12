@@ -33,7 +33,6 @@ public class CameraSmoothFollow : NonPersistantSingleton<CameraSmoothFollow> {
   }
 
   void FixedUpdate () {
-      print(Vector3.Distance(transform.position,camera.transform.position));
     transform.position = Vector3.SmoothDamp(transform.position, target.position,
                                             ref speed, smoothTime);
   }

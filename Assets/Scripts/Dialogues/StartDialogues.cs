@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class StartDialogues : MonoBehaviour {
   public Npc good;
   public Npc evil;
-  public GameObject trees;
-  public GameObject signals;
+  public HidableGroup trees;
+  public HidableGroup signals;
   public CompositeSpawner enemySpawner;
   public bool motion;
   public bool look;
@@ -29,11 +29,11 @@ public class StartDialogues : MonoBehaviour {
 
   public void GrowTrees () {
     good.onTalkingFinished -= GrowTrees;
-    trees.SetActive(true);
+    trees.SetVisibility(true);
   }
 
   IEnumerator _EvilScript () {
-    yield return new WaitUntil(() => good.doneTalking && motion && look);
+    yield return new WaitUntil(() => good.doneTalking); //  && motion && look);
     yield return new WaitForSeconds(5);
     evil.Speak();
     yield return new WaitUntil(() => evil.doneTalking && attack);
@@ -43,7 +43,7 @@ public class StartDialogues : MonoBehaviour {
 
   public void HandleFinish () {
     StartCoroutine(_Cinematic());
-    signals.SetActive(true);
+    signals.SetVisibility(true);
   }
 
   IEnumerator _Cinematic () {

@@ -20,6 +20,7 @@ public class Npc : MonoBehaviour {
   public RuntimeAnimatorController animController;
   public bool doneTalking = false;
   public bool omniscientDialogue = false;
+  public bool blocksOnDecission = true;
 
   Coroutine _speak;
 
@@ -33,7 +34,8 @@ public class Npc : MonoBehaviour {
   }
 
   public void Speak () {
-    if (decision != Decision.None && current == 0) return;
+    if ((blocksOnDecission && decision != Decision.None)
+        && current == 0) return;
 
     if (_speak == null) {
       _speak = StartCoroutine(_Speak());
@@ -56,7 +58,8 @@ public class Npc : MonoBehaviour {
 
   public void IndicateActiveForTalk () {
     if (!omniscientDialogue) {
-      actionIndicator.SetActive(decision == Decision.None && current == 0);
+      actionIndicator.SetActive(!((blocksOnDecission && decision != Decision.None)
+                                  && current == 0));
     }
   }
 

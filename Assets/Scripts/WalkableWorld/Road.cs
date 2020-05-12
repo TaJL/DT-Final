@@ -4,6 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Road : MonoBehaviour {
+  public event System.Action onDecisionTaken;
+
   public Builder visual;
   public Transform obstacles;
   public Platform connected;
@@ -21,16 +23,21 @@ public class Road : MonoBehaviour {
     obstacles = GetComponentInChildren<NavMeshObstacle>().transform.parent;
   }
 
-  public void Hide () {
-    visual.Hide();
+  public void Hide (bool pretty = false) {
+    visual.Hide(pretty);
     obstacles.gameObject.SetActive(true);
-    if (connected) connected.visual.Hide();
+    if (connected) connected.visual.Hide(pretty);
   }
 
   public void Show () {
     visual.Show();
     obstacles.gameObject.SetActive(false);
+
+    if (onDecisionTaken != null) onDecisionTaken();
+    print("decision taken! " + this);
+
     if (connected) connected.visual.Show();
         audioManager.PlaySound(0, constructVolume);
+
   }
 }

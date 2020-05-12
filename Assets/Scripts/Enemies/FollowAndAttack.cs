@@ -44,8 +44,9 @@ public class FollowAndAttack : MonoBehaviour {
 
   IEnumerator _Chase () {
     animator.SetTrigger("reset");
+    Transform target = far.target.transform;
     while (true) {
-      agent.SetDestination(far.target.transform.position);
+      agent.SetDestination(target.position);
       yield return new WaitForSeconds(Random.Range(repathTime.x, repathTime.y));
     }
   }

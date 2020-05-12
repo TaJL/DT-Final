@@ -9,7 +9,7 @@ public class Hidable : MonoBehaviour {
     animator = GetComponent<Animator>();
   }
 
-  void OnEnable () {
-    animator.SetBool("is visible", true);
+  public void SetVisibility (bool value) {
+    animator.SetBool("is visible", value);
   }
 }
