@@ -10,10 +10,13 @@ public class FruitDropper : MonoBehaviour {
   public float t = 1;
   public Attackable attackable;
   public Animator animator;
+  public bool spawnsOnEnemyAttack = true;
 
   void OnEnable () {
+    if (spawnsOnEnemyAttack) {
+      attackable.onDamageTaken += DropFruit;
+    }
     attackable.cooldown.onOver += SpawnFruit;
-    attackable.onDamageTaken += DropFruit;
   }
 
   public void DropFruit () {
