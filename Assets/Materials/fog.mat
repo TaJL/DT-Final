@@ -85,7 +85,7 @@ Material:
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DiffuseFactor: 0
+    - _DiffuseFactor: 0.035
     - _DistortionBlend: 0.5
     - _DistortionEnabled: 0
     - _DistortionStrength: 1
@@ -117,16 +117,16 @@ Material:
     - _TextureVisibility: 0.744
     - _Transparency: 1
     - _UVSec: 0
-    - _UnderLineSmoothness: 0.341
+    - _UnderLineSmoothness: 0
     - _UnderwaterBias: 1
-    - _UnderwaterFog: 0.05
+    - _UnderwaterFog: 0.075
     - _VertexNormalsFactor: 1
     - _WaterHeight: 0
     - _WaveLength: 1
     - _ZWrite: 1
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0.1006141, g: 0.1399297, b: 0.1792453, a: 1}
+    - _Color: {r: 0.46226418, g: 0.03706836, b: 0.054423284, a: 1}
     - _DistTiling: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 0, g: 0, b: 0, a: 1}
