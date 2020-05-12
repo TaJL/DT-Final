@@ -27,6 +27,7 @@ public class TitleScreen : MonoBehaviour
         controls.TitleScreen.Enable();
 
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         SetFinalText();
     }
