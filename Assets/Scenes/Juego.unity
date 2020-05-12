@@ -2744,7 +2744,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 115, y: 0}
+  m_SizeDelta: {x: 114.953674, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &127862607
 Animator:
@@ -9396,8 +9396,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8a00ab3d1a644ec4586cb28cc05a3dc7, type: 3}
-    m_FontSize: 15
+    m_Font: {fileID: 12800000, guid: 86b41d715b0eaa24f865e8249d697800, type: 3}
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -10001,6 +10001,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: South
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777386254614975148, guid: 0f661ef413299b649a430b6d90bad314,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 86b41d715b0eaa24f865e8249d697800,
+        type: 3}
+    - target: {fileID: 4777386254614975148, guid: 0f661ef413299b649a430b6d90bad314,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8664816722391444243, guid: 0f661ef413299b649a430b6d90bad314,
         type: 3}
@@ -11863,7 +11874,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 273.7, y: 0}
+  m_SizeDelta: {x: 273.58975, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754053441
 MonoBehaviour:
@@ -19795,7 +19806,7 @@ PrefabInstance:
     - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
         type: 3}
       propertyPath: tweener.curve.m_Curve.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
         type: 3}
@@ -19805,12 +19816,12 @@ PrefabInstance:
     - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
         type: 3}
       propertyPath: tweener.curve.m_Curve.Array.data[1].time
-      value: 0.69062525
+      value: 0.20966822
       objectReference: {fileID: 0}
     - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
         type: 3}
       propertyPath: tweener.curve.m_Curve.Array.data[1].value
-      value: 1.0009512
+      value: 1.0477041
       objectReference: {fileID: 0}
     - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
         type: 3}
@@ -19835,17 +19846,77 @@ PrefabInstance:
     - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
         type: 3}
       propertyPath: tweener.curve.m_Curve.Array.data[2].time
-      value: 1
+      value: 0.34869114
       objectReference: {fileID: 0}
     - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
         type: 3}
       propertyPath: tweener.curve.m_Curve.Array.data[2].value
-      value: 1
+      value: 0.9386734
       objectReference: {fileID: 0}
     - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
         type: 3}
       propertyPath: tweener.time
-      value: 0.5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[2].inSlope
+      value: -0.80812633
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[2].outSlope
+      value: -0.80812633
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[2].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[3].time
+      value: 0.52923155
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[3].value
+      value: 1.0607913
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[3].inSlope
+      value: -0.19694115
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[3].outSlope
+      value: -0.19694115
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[3].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[3].outWeight
+      value: 0.15316881
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[4].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138100401007020200, guid: 39962c836b241d94bbe89fa3eb5e9b04,
+        type: 3}
+      propertyPath: tweener.curve.m_Curve.Array.data[4].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39962c836b241d94bbe89fa3eb5e9b04, type: 3}
@@ -21200,6 +21271,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: East
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777386254614975148, guid: 0f661ef413299b649a430b6d90bad314,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 86b41d715b0eaa24f865e8249d697800,
+        type: 3}
+    - target: {fileID: 4777386254614975148, guid: 0f661ef413299b649a430b6d90bad314,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8664816722391444243, guid: 0f661ef413299b649a430b6d90bad314,
         type: 3}
@@ -23276,6 +23358,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: West
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777386254614975148, guid: 0f661ef413299b649a430b6d90bad314,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 86b41d715b0eaa24f865e8249d697800,
+        type: 3}
+    - target: {fileID: 4777386254614975148, guid: 0f661ef413299b649a430b6d90bad314,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8664816722391444243, guid: 0f661ef413299b649a430b6d90bad314,
         type: 3}
@@ -30053,7 +30146,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 115, y: 0}
+  m_SizeDelta: {x: 114.95366, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108716590
 MonoBehaviour:
@@ -33585,6 +33678,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777386254614975148, guid: 0f661ef413299b649a430b6d90bad314,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 86b41d715b0eaa24f865e8249d697800,
+        type: 3}
+    - target: {fileID: 4777386254614975148, guid: 0f661ef413299b649a430b6d90bad314,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f661ef413299b649a430b6d90bad314, type: 3}
