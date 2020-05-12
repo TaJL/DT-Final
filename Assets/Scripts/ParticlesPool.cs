@@ -16,7 +16,7 @@ public class ParticlesPool
         particles = new List<ParticleSystem>();
         for (int i = 0; i < start_size; i++)
         {
-            particles.Add((PrefabUtility.InstantiatePrefab(prefab) as GameObject).GetComponent<ParticleSystem>());
+            particles.Add((GameManager.Instantiate(prefab) as GameObject).GetComponent<ParticleSystem>());
             particles[particles.Count-1].gameObject.SetActive(false);
         }
     }

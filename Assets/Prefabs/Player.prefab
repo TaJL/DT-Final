@@ -19583,6 +19583,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037ea3da6e247f848bad5deb90ad5572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sword: {fileID: 0}
+  gun: {fileID: 0}
   isActive: 0
   hitEffect: {fileID: 100228010}
   model: {fileID: 3405228094457532018}
@@ -19852,6 +19854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9171740d1a52e1a4084cd9ebb2ac54aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gun: {fileID: 0}
   speed: 12
   attackDirection: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
@@ -24817,6 +24820,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5908414085719624393, guid: 40442567829ecd649984a27dfc377658,
+        type: 3}
+      propertyPath: clips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908414085719624393, guid: 40442567829ecd649984a27dfc377658,
+        type: 3}
+      propertyPath: clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b8ff437da6064446ba9219df4e0e703, type: 3}
     - target: {fileID: 7981809038722462189, guid: 40442567829ecd649984a27dfc377658,
         type: 3}
       propertyPath: m_Name
