@@ -22,7 +22,16 @@ public class FollowAndAttack : MonoBehaviour {
   Coroutine _attack;
   Coroutine _chase;
 
-  void Update () {
+  private float cooldown = 0;
+
+  void Update ()
+  {
+    if (cooldown > 0)
+    {
+      cooldown -= Time.deltaTime;
+      return;
+    }
+
     animator.SetFloat("speed", agent.velocity.magnitude);
 
     if ((far.target && !close.target) && _chase == null && _attack == null) {
@@ -51,6 +60,16 @@ public class FollowAndAttack : MonoBehaviour {
     }
   }
 
+  public void ResetBehaviour()
+  {
+    StopAllCoroutines();
+    animator.SetTrigger("reset");
+    _attack = null;
+    _chase = null;
+    state = ChaserState.Idle;
+    cooldown = 1f;
+    damage.enabled = false;
+  }
   IEnumerator _Attack () {
     agent.ResetPath();
     animator.SetTrigger("reset");
