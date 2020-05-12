@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class Road : MonoBehaviour {
   public event System.Action onDecisionTaken;
 
+  public AudioClip sfx;
   public Builder visual;
   public Transform obstacles;
   public Platform connected;
@@ -36,7 +37,8 @@ public class Road : MonoBehaviour {
     if (onDecisionTaken != null) onDecisionTaken();
 
     if (connected) connected.visual.Show();
-        audioManager.PlaySound(0, constructVolume);
+    //     audioManager.PlaySound(0, constructVolume);
+    Sfx.Instance.speaker.PlayOneShot(sfx);
 
   }
 }

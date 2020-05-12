@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour {
   public event System.Action onDestroyed;
@@ -14,8 +16,19 @@ public class Enemy : MonoBehaviour {
 
   void OnEnable () {
     hp.onDead += Die;
+    hp.onDamageTaken += TakeDamage;
   }
 
+  private void OnDestroy()
+  {
+    hp.onDead -= Die;
+    hp.onDamageTaken -= TakeDamage;
+  }
+
+  private void TakeDamage()
+  {
+    behaviour.ResetBehaviour();
+  }
   public void Die () {
     Destroy(behaviour);
     animator.SetTrigger("die");

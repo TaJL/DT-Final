@@ -110,6 +110,17 @@ public class TitleScreen : MonoBehaviour
         }
     }
 
+    public void EnterGame()
+    {
+        SceneManager.LoadScene(1);
+
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+
+    }
     private void SelectOption()
     {
         if (optionActual == Options.Start)
