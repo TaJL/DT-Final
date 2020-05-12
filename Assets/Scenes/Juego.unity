@@ -258,6 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5888dbd933664f855f6fb543ad210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 155cad8595c50b345bba6105b40fb7f4, type: 3}
   visual: {fileID: 31464812}
   obstacles: {fileID: 93039121}
   connected: {fileID: 1936949124}
@@ -500,6 +501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5888dbd933664f855f6fb543ad210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 155cad8595c50b345bba6105b40fb7f4, type: 3}
   visual: {fileID: 1543918149}
   obstacles: {fileID: 713394089}
   connected: {fileID: 1586932503}
@@ -1197,6 +1199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5888dbd933664f855f6fb543ad210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 155cad8595c50b345bba6105b40fb7f4, type: 3}
   visual: {fileID: 136038785}
   obstacles: {fileID: 1594494205}
   connected: {fileID: 1084695496}
@@ -1247,6 +1250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5888dbd933664f855f6fb543ad210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 155cad8595c50b345bba6105b40fb7f4, type: 3}
   visual: {fileID: 1214504670}
   obstacles: {fileID: 894379882}
   connected: {fileID: 26415798}
@@ -1769,6 +1773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5888dbd933664f855f6fb543ad210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 155cad8595c50b345bba6105b40fb7f4, type: 3}
   visual: {fileID: 165947914}
   obstacles: {fileID: 73300859}
   connected: {fileID: 2121829690}
@@ -5021,6 +5026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5888dbd933664f855f6fb543ad210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 155cad8595c50b345bba6105b40fb7f4, type: 3}
   visual: {fileID: 1248437276}
   obstacles: {fileID: 2039210289}
   connected: {fileID: 2138470479}
@@ -6423,6 +6429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5888dbd933664f855f6fb543ad210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 155cad8595c50b345bba6105b40fb7f4, type: 3}
   visual: {fileID: 2077885310}
   obstacles: {fileID: 883876762}
   connected: {fileID: 740875549}
@@ -8708,6 +8715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5888dbd933664f855f6fb543ad210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 155cad8595c50b345bba6105b40fb7f4, type: 3}
   visual: {fileID: 256195403}
   obstacles: {fileID: 1957006155}
   connected: {fileID: 59013536}
@@ -9059,6 +9067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5888dbd933664f855f6fb543ad210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 155cad8595c50b345bba6105b40fb7f4, type: 3}
   visual: {fileID: 1126437476}
   obstacles: {fileID: 1362198589}
   connected: {fileID: 593466006}
@@ -13775,6 +13784,31 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -154974177730712587, guid: a17c7c98b541a764fbe60328de5cc4e4, type: 3}
+--- !u!1 &926788510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7606523729004256410, guid: c892e25289dd2084a955dd1c3202f331,
+    type: 3}
+  m_PrefabInstance: {fileID: 1213903158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &926788511 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7606523729004256411, guid: c892e25289dd2084a955dd1c3202f331,
+    type: 3}
+  m_PrefabInstance: {fileID: 1213903158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &926788513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926788510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 683ff722310f6334b938b945f4d2b42d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speaker: {fileID: 926788511}
 --- !u!1 &928719346
 GameObject:
   m_ObjectHideFlags: 0
@@ -14280,6 +14314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5888dbd933664f855f6fb543ad210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 155cad8595c50b345bba6105b40fb7f4, type: 3}
   visual: {fileID: 574297951}
   obstacles: {fileID: 1259151165}
   connected: {fileID: 740875549}
@@ -15833,6 +15868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5888dbd933664f855f6fb543ad210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 155cad8595c50b345bba6105b40fb7f4, type: 3}
   visual: {fileID: 706582300}
   obstacles: {fileID: 1721826223}
   connected: {fileID: 1464418420}
@@ -23175,6 +23211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5888dbd933664f855f6fb543ad210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 155cad8595c50b345bba6105b40fb7f4, type: 3}
   visual: {fileID: 2143789450}
   obstacles: {fileID: 1293905808}
   connected: {fileID: 1084695496}
@@ -30803,6 +30840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5888dbd933664f855f6fb543ad210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 155cad8595c50b345bba6105b40fb7f4, type: 3}
   visual: {fileID: 1336130503}
   obstacles: {fileID: 1756185781}
   connected: {fileID: 1598239849}
@@ -31047,6 +31085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5888dbd933664f855f6fb543ad210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 155cad8595c50b345bba6105b40fb7f4, type: 3}
   visual: {fileID: 786947775}
   obstacles: {fileID: 9865417}
   connected: {fileID: 2138470479}
