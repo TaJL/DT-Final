@@ -23,7 +23,7 @@ public class TitleScreen : MonoBehaviour
         controls.TitleScreen.Select.performed += ctx => SelectOption();
         controls.TitleScreen.Enable();
 
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void ActualiceToStartOption()
@@ -66,6 +66,17 @@ public class TitleScreen : MonoBehaviour
         }
     }
 
+    public void EnterGame()
+    {
+        SceneManager.LoadScene(1);
+
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+
+    }
     private void SelectOption()
     {
         if (optionActual == Options.Start)
