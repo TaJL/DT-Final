@@ -42,6 +42,14 @@ public class StartDialogues : MonoBehaviour {
   }
 
   public void HandleFinish () {
+    StartCoroutine(_Cinematic());
     signals.SetActive(true);
+  }
+
+  IEnumerator _Cinematic () {
+    float elapsed = 0;
+    while (elapsed > 1) {
+      yield return null;
+    }
   }
 }

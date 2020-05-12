@@ -16,7 +16,6 @@ public class Npc : MonoBehaviour {
   public const float LECTURE_TIME_PER_WORD = 0.5f;
   public int current = 0;
   public GameObject actionIndicator;
-  public GameObject dialogueAoe;
 
   public RuntimeAnimatorController animController;
   public bool doneTalking = false;
