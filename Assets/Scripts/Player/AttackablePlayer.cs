@@ -8,7 +8,7 @@ public class AttackablePlayer : Attackable {
   public override void MakeDamage (int damage, Vector3 source, float push) {
     if (!CanTakeDamage) return;
 
-    if (!shield || shield.enabled == false || !shield.isActive) {
+    if (!shield || shield.gameObject.activeSelf == false || !shield.isActive) {
       base.MakeDamage(damage, source, push);
     } else {
       if (shield.isActive &&
