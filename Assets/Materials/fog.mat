@@ -12,8 +12,8 @@ Material:
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 1
-  m_CustomRenderQueue: -1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -107,6 +107,10 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DiffuseFactor: 0.202
+    - _DistortionBlend: 0.5
+    - _DistortionEnabled: 0
+    - _DistortionStrength: 1
+    - _DistortionStrengthScaled: 0.1
     - _DstBlend: 0
     - _Enablerimlight: 1
     - _Fill: 6.04
@@ -135,33 +139,22 @@ Material:
     - _Tintinsidecolor: 1
     - _Transparency: 1
     - _UVSec: 0
-    - _UnderLineSmoothness: 0.688
+    - _UnderLineSmoothness: 0.676
     - _UnderwaterBias: 1
-    - _UnderwaterFog: 0.05
-    - _Wave1amplitude: 0
-    - _Wave1frequency: 0
-    - _Wave1offset: 0
-    - _Wave2Frequency: 0
-    - _Wave2amplitude: 0
-    - _Wave2offset: 0
-    - _Worldcoordinates: 0
+    - _UnderwaterFog: 0.081
+    - _VertexNormalsFactor: 1
+    - _WaterHeight: 0
+    - _WaveLength: 1
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
-    - _Basecolor: {r: 0, g: 0, b: 0, a: 1}
-    - _Bordercolor: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0, g: 0.23349059, b: 0.31132078, a: 1}
-    - _DissolveColor: {r: 0, g: 1, b: 0, a: 1}
-    - _EmissionColor: {r: 0.6886792, g: 0.26312745, b: 0.26312745, a: 1}
-    - _Emissiontexspeed: {r: 0, g: 0, b: 0, a: 0}
-    - _Emissiontextiling: {r: 1, g: 1, b: 0, a: 0}
-    - _Fillcolor: {r: 1, g: 0.5514706, b: 0.5514706, a: 1}
-    - _Mainoffset: {r: 0, g: 0, b: 0, a: 0}
-    - _Maintiling: {r: 1, g: 1, b: 0, a: 0}
-    - _Noisespeed: {r: 0, g: 0, b: 0, a: 0}
-    - _Noisetexspeed: {r: 0, g: 0, b: 0, a: 0}
-    - _Noisetextiling: {r: 1, g: 1, b: 0, a: 0}
-    - _Rimlightcolor: {r: 0, g: 0.8344827, b: 1, a: 1}
-    - _Secondaryemissioncolor: {r: 1, g: 0.9724138, b: 0, a: 1}
-    - _Secondaryemissionspeed: {r: 0, g: 0, b: 0, a: 0}
-    - _Secondaryemissiontiling: {r: 1, g: 1, b: 0, a: 0}
+    - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
+    - _Color: {r: 0.41509432, g: 0.12726949, b: 0.25046661, a: 1}
+    - _DistTiling: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FoamColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MoveDirection: {r: 0, g: 7.69, b: 0, a: 0}
+    - _SoftParticleFadeParams: {r: 0, g: 1, b: 0, a: 0}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _Tiling: {r: 1, g: 1, b: 1, a: 1}
+    - _WaterColor: {r: 0, g: 1, b: 0.9394505, a: 1}

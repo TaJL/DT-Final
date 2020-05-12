@@ -31,7 +31,7 @@ public class Builder : MonoBehaviour {
 
   IEnumerator _TweenTo (Transform thing, float wait, float pos) {
     yield return new WaitForSeconds(wait);
-    tweener.TweenTo(thing,new Vector3(thing.position.x, pos, thing.position.z),null,1);
+    tweener.TweenTo(thing,new Vector3(thing.position.x, pos, thing.position.z),null,null);
   }
 
   IEnumerator _PopItTo (Transform thing, float y) {
