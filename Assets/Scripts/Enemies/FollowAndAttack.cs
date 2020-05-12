@@ -18,9 +18,16 @@ public class FollowAndAttack : MonoBehaviour {
   public Animator animator;
   public Transform motionTarget;
   public Collider damage;
+  public AudioClip charge;
+  public AudioClip attack;
 
   Coroutine _attack;
   Coroutine _chase;
+  AudioSource _speaker;
+
+  void OnEnable () {
+    _speaker = GetComponent<AudioSource>();
+  }
 
   private float cooldown = 0;
 
@@ -71,6 +78,11 @@ public class FollowAndAttack : MonoBehaviour {
     damage.enabled = false;
   }
   IEnumerator _Attack () {
+    Sfx.Instance.speaker.volume = Random.Range(0.1f, 0.3f);
+    Sfx.Instance.speaker.pitch = Random.Range(0.7f, 1.2f);
+    Sfx.Instance.speaker.PlayOneShot(charge);
+    // Sfx.Instance.speaker.volume = Sfx.Instance.speaker.pitch = 1;
+
     agent.ResetPath();
     animator.SetTrigger("reset");
     Vector3 target = close.target.transform.position;
@@ -88,6 +100,11 @@ public class FollowAndAttack : MonoBehaviour {
     }
 
     yield return new WaitForSeconds(chargingTime/2f);
+
+    Sfx.Instance.speaker.volume = Random.Range(0.1f, 0.3f);
+    Sfx.Instance.speaker.pitch = Random.Range(0.7f, 1.2f);
+    Sfx.Instance.speaker.PlayOneShot(attack);
+    // Sfx.Instance.speaker.volume = Sfx.Instance.speaker.pitch = 1;
 
     animator.SetTrigger("attack step");
     damage.enabled = true;

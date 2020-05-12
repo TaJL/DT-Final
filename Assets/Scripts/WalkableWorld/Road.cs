@@ -36,7 +36,7 @@ public class Road : MonoBehaviour {
 
     if (onDecisionTaken != null) onDecisionTaken();
 
-    // if (connected) connected.visual.Show();
+    if (connected) connected.visual.Show();
     //     audioManager.PlaySound(0, constructVolume);
     Sfx.Instance.speaker.PlayOneShot(sfx);
 
