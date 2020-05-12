@@ -66,7 +66,7 @@ public class @TheInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f9ff09f7-702c-4f9d-9471-f240b9d0abcc"",
-                    ""path"": ""<Keyboard>/i"",
+                    ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -88,7 +88,7 @@ public class @TheInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7aa82e50-e749-48d6-95f5-8921e4f95f5b"",
-                    ""path"": ""<Keyboard>/l"",
+                    ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -110,7 +110,7 @@ public class @TheInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9e8795d2-84b5-483d-91fd-c6a9abb36c99"",
-                    ""path"": ""<Keyboard>/k"",
+                    ""path"": ""<Keyboard>/3"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -132,7 +132,7 @@ public class @TheInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4cd8a2fa-efa9-4c9a-9337-8438373f4aaf"",
-                    ""path"": ""<Keyboard>/j"",
+                    ""path"": ""<Keyboard>/4"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -201,8 +201,19 @@ public class @TheInput : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e9d694f8-1104-4c14-8a62-cde0e7de5a20"",
-                    ""path"": ""<Keyboard>/k"",
+                    ""id"": ""d0866f84-b5e3-4f86-9542-bf243cb75666"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Talk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cd76c0d1-73d9-4ca6-8054-cbc683bf349f"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -301,7 +312,7 @@ public class @TheInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""fbc5a4fc-cc82-4991-88a4-7f415ab5d5b6"",
-                    ""path"": ""<Keyboard>/j"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -377,6 +388,17 @@ public class @TheInput : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""d7f19ca4-3f49-4970-a5fd-979625bf4e1f"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": ""ScaleVector2(x=0.1,y=0.1)"",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""c7ce5f60-3fdb-4d89-98d2-2386a68e4443"",
                     ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
@@ -389,7 +411,7 @@ public class @TheInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""567cda7d-1759-4db9-be19-dbaa2765cdf9"",
-                    ""path"": ""<Keyboard>/slash"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -427,7 +449,7 @@ public class @TheInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""67162a1a-45ce-4cfe-876d-423b8576b6e8"",
-                    ""path"": ""<Keyboard>/l"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -536,7 +558,7 @@ public class @TheInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d1e9f293-fa9e-4fb8-9f8b-33751d829e78"",
-                    ""path"": ""<Keyboard>/j"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -548,6 +570,17 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""9c05f505-ed59-456e-933b-e2445a2b790d"",
                     ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dfe72474-1d8c-4681-a04e-f839e2778bba"",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
