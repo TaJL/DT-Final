@@ -33,7 +33,8 @@ public class PlayerAnimations : MonoBehaviour {
   }
 
   public void TakeDamageAnimation () {
-    Mixer.Instance.TweenCutOff(100,0f,1f);
+    Mixer.Instance.TweenCutOff(50,0f,2);
+    CameraSmoothFollow.Instance.SlowTime(0,2f);
     attackedFeedback.Play();
   }
 
