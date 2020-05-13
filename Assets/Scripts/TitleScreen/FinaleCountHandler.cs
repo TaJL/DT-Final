@@ -9,7 +9,7 @@ public class FinaleCountHandler : MonoBehaviour
     public bool maldad = false;
 
     public Enemy BossMaldad;
-    public Enemy Balance;
+    public Enemy BossBalance;
     public Enemy BossMoralRota;
 
     private void Awake()
