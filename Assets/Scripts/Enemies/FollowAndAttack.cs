@@ -20,6 +20,7 @@ public class FollowAndAttack : MonoBehaviour {
   public Collider damage;
   public AudioClip charge;
   public AudioClip attack;
+  public Player target;
 
   Coroutine _attack;
   Coroutine _chase;
@@ -41,7 +42,7 @@ public class FollowAndAttack : MonoBehaviour {
 
     animator.SetFloat("speed", agent.velocity.magnitude);
 
-    if ((far.target && !close.target) && _chase == null && _attack == null) {
+    if ((target && !close.target) && _chase == null && _attack == null) {
       if (_attack != null) {
         StopCoroutine(_attack);
         _attack = null;
@@ -60,7 +61,7 @@ public class FollowAndAttack : MonoBehaviour {
 
   IEnumerator _Chase () {
     animator.SetTrigger("reset");
-    Transform target = far.target.transform;
+    Transform target = this.target.transform;
     while (true) {
       agent.SetDestination(target.position);
       yield return new WaitForSeconds(Random.Range(repathTime.x, repathTime.y));
