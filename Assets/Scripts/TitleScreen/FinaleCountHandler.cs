@@ -26,7 +26,7 @@ public class FinaleCountHandler : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void Balance()
+    public void FinalBalance()
     {
         FinaleCountHandler.Instance.balance = true;
         SceneManager.LoadScene(0);
