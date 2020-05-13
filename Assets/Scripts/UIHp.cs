@@ -13,7 +13,7 @@ public class UIHp : MonoBehaviour {
     _hp = GameObject.FindWithTag("Player").GetComponentInChildren<AttackablePlayer>();
     _hp.onDamageTaken += HandleDamage;
     _hp.onHealed += Heal;
-    Heal();
+    // Heal();
     _hp.onDead += Restart;
   }
 
