@@ -542,7 +542,7 @@
                 {
                     "name": "",
                     "id": "b1eebf3c-46ec-4f14-a169-0caf176d5693",
-                    "path": "<Keyboard>/#(W)",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -574,8 +574,19 @@
                 },
                 {
                     "name": "",
+                    "id": "8ca98e2a-246b-45aa-bf87-c1577139ac36",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "1d7a9aeb-8971-4a89-a9a1-f1a168db7e02",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -598,6 +609,17 @@
                     "name": "",
                     "id": "10731684-9d36-4b9e-b68a-f972e76a53c9",
                     "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "83289960-1556-42d4-936e-15d92a8a07a3",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
