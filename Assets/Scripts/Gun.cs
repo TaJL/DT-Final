@@ -20,13 +20,19 @@ public class Gun : MonoBehaviour {
     };
 
     cooldown.onOver += Shoot;
+    Player.Instance.GetComponentInChildren<AttackablePlayer>().onDead += TurnOff;
   }
 
   void Update () {
     cooldown.Update();
   }
 
+  public void TurnOff () {
+    this.enabled = false;
+  }
+
   public void Shoot () {
+    if (!this.enabled) return;
     if (!cooldown.IsOver || !shooting) return;
 
     cooldown.Reset();
