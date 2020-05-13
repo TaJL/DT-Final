@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class Sword : MonoBehaviour {
   public event System.Action onAttack;
 
+  public AttackablePlayer hp;
   public ParticleSystem trail;
   public float angle = 50;
   public float duration = 0.25f;
@@ -48,6 +49,7 @@ public class Sword : MonoBehaviour {
           Vector3.Angle(motion.attackDirection, direction) < angle) {
 
         if (attackable.MakeDamage(damage, transform.position, pushForce)) {
+          hp.InvulnerabilityPulse();
           CameraSmoothFollow.Instance.Shake(0.25f,0.1f);
           CameraSmoothFollow.Instance.Freeze(0.25f);
           hit_particles.PlayParticleAt(c.transform.position + (c.transform.position - transform.position)/2);

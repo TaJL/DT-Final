@@ -9644,7 +9644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &559876562
 Transform:
   m_ObjectHideFlags: 0
@@ -15056,6 +15056,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3908240e3380f5c43abe7eb53146c4a6, type: 3}
+--- !u!114 &951609416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6152942513203543279, guid: e3b2e61f6de8bce4ca6bcb6dfb18daa3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6656357629021804332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1804df5cdf04447b23c64ec62c78bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &952807735
 GameObject:
   m_ObjectHideFlags: 0
@@ -27422,7 +27434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d145cfb7c0c34a4c9ec2cc0e83369ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVisible: 0
+  isVisible: 1
 --- !u!1 &1685696849
 GameObject:
   m_ObjectHideFlags: 0
@@ -38437,6 +38449,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 442291973, guid: e3b2e61f6de8bce4ca6bcb6dfb18daa3, type: 3}
+      propertyPath: hp
+      value: 
+      objectReference: {fileID: 951609416}
     - target: {fileID: 1565806633, guid: e3b2e61f6de8bce4ca6bcb6dfb18daa3, type: 3}
       propertyPath: gun
       value: 

@@ -69,13 +69,13 @@ public class FollowAndAttack : MonoBehaviour {
 
   public void ResetBehaviour()
   {
-    StopAllCoroutines();
-    animator.SetTrigger("reset");
-    _attack = null;
-    _chase = null;
-    state = ChaserState.Idle;
-    cooldown = 1f;
-    damage.enabled = false;
+    // StopAllCoroutines();
+    // animator.SetTrigger("reset");
+    // _attack = null;
+    // _chase = null;
+    // state = ChaserState.Idle;
+    // cooldown = 1f;
+    // damage.enabled = false;
   }
   IEnumerator _Attack () {
     Sfx.Instance.speaker.volume = Random.Range(0.02f, 0.05f);

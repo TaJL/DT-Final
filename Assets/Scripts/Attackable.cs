@@ -33,6 +33,10 @@ public class Attackable : MonoBehaviour {
     body.AddForce((transform.position - source).normalized * push, ForceMode.Impulse);
   }
 
+  public void InvulnerabilityPulse () {
+    cooldown.Reset();
+  }
+
   public virtual bool MakeDamage (int damage, Vector3 source, float push) {
     if (!CanTakeDamage) return false;
     if (invulnerable) return false;
