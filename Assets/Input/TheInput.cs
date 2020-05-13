@@ -66,7 +66,7 @@ public class @TheInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f9ff09f7-702c-4f9d-9471-f240b9d0abcc"",
-                    ""path"": ""<Keyboard>/1"",
+                    ""path"": ""<Keyboard>/4"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -88,7 +88,7 @@ public class @TheInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7aa82e50-e749-48d6-95f5-8921e4f95f5b"",
-                    ""path"": ""<Keyboard>/2"",
+                    ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -110,7 +110,7 @@ public class @TheInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9e8795d2-84b5-483d-91fd-c6a9abb36c99"",
-                    ""path"": ""<Keyboard>/3"",
+                    ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -132,7 +132,7 @@ public class @TheInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4cd8a2fa-efa9-4c9a-9337-8438373f4aaf"",
-                    ""path"": ""<Keyboard>/4"",
+                    ""path"": ""<Keyboard>/3"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -399,7 +399,7 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""id"": ""d7f19ca4-3f49-4970-a5fd-979625bf4e1f"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
-                    ""processors"": ""ScaleVector2(x=0.1,y=0.1)"",
+                    ""processors"": ""ScaleVector2(x=0.05,y=0.05)"",
                     ""groups"": """",
                     ""action"": ""Look"",
                     ""isComposite"": false,

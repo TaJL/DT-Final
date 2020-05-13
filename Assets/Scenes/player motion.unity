@@ -1366,6 +1366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6bf783d29fdda4f98d01d5e8d41350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invulnerable: 0
   maxHP: 0
   hp: 10
   cooldown:
@@ -1376,6 +1377,8 @@ MonoBehaviour:
     randomStart: 0
   body: {fileID: 725045456}
   dead: 0
+  damageSound: {fileID: 0}
+  _speaker: {fileID: 0}
 --- !u!135 &725045451
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1526,7 +1529,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 273.58975, y: 0}
+  m_SizeDelta: {x: 273.54684, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754053441
 MonoBehaviour:
@@ -3099,7 +3102,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 114.953674, y: 0}
+  m_SizeDelta: {x: 114.93564, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1675883605
 MonoBehaviour:
@@ -3323,7 +3326,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 114.95366, y: 0}
+  m_SizeDelta: {x: 114.93564, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108716590
 MonoBehaviour:
@@ -5035,6 +5038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5888dbd933664f855f6fb543ad210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 0}
   visual: {fileID: 2822566517285545584}
   obstacles: {fileID: 7648725430137936807}
   connected: {fileID: 0}
