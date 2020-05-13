@@ -45,9 +45,13 @@ public class PlayerMotion : MonoBehaviour {
 
     transform.forward = smoothedDirection;
 
+    if (gun.shooting) {
+      smoothedMotion = Vector3.zero;
+    } else {
     smoothedMotion =
       Vector3.MoveTowards(smoothedMotion, relativeDirection,
-                          motionSmoothSpeed * Time.deltaTime * (gun.shooting? 0.2f: 1));
+                          motionSmoothSpeed * Time.deltaTime);
+    }
 
     transform.position += smoothedMotion * speed * Time.deltaTime;
   }
