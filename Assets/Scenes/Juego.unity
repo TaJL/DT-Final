@@ -7836,6 +7836,7 @@ MonoBehaviour:
   damage: {fileID: 1328769574}
   charge: {fileID: 8300000, guid: 5393cf46aaa74024e81b14ee451c82ca, type: 3}
   attack: {fileID: 8300000, guid: 3b8ff437da6064446ba9219df4e0e703, type: 3}
+  target: {fileID: 0}
 --- !u!114 &424603377
 MonoBehaviour:
   m_ObjectHideFlags: 0
