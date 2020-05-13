@@ -36,7 +36,7 @@ public class StartDialogues : MonoBehaviour {
     yield return new WaitUntil(() => good.doneTalking); //  && motion && look);
     yield return new WaitForSeconds(5);
     evil.Speak();
-    yield return new WaitUntil(() => evil.doneTalking && attack);
+    yield return new WaitUntil(() => evil.doneTalking) //  && attack);
     enemySpawner.gameObject.SetActive(true);
     enemySpawner.onFinished += HandleFinish;
   }
