@@ -77,21 +77,9 @@ Shader "Unlit/DepthObject"
                 //Diffuse lighthing
                 float3 light_direction = normalize(_WorldSpaceLightPos0.xyz) ;
                 float diffuse_coeficient = clamp(dot(-light_direction,normalize(i.normal)),1-_DiffuseFactor,1) ;
-                //DEPTH TEXTURE
-                float raw_depth = tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.screenPos)).r;
-                float existingDepthLinear = LinearEyeDepth(raw_depth) ;
-                
-                float3 dir = (i.worldPos - _WorldSpaceCameraPos);
-                dir.y = 0;
-                dir = normalize(dir);
                 float dist = (distance(i.worldPos,_WorldSpaceCameraPos) - 44/3)/100; 
-                float depthDifference = (existingDepthLinear - i.screenPos.w - 900);
-                float waterDepthDifference01 = 1 - max(depthDifference,0);
-
-                float depth = saturate((existingDepthLinear) * (1 / 10));
 
                 //Texture
-                float4 tex_color = tex2D(_MainTex,(i.uv * _MainTex_ST.xy + (_MainTex_ST.zw )));
 
                 float3 color_texture_composite = ((_Color.rgb ) )  *_LightColor + clamp(dist,0,1)* diffuse_coeficient ;
 

@@ -97,7 +97,6 @@ Shader "Unlit/DepthFog"
                 float waterDepthDifference01 = 1 - max(depthDifference,0); 
 
                 //REFRACTION
-                float2 refraction_uv = i.screenPos/i.screenPos.w ;
                 
                 half4 underwater_color = tex2Dproj(_BackgroundTexture,i.screenPos);
 
@@ -105,13 +104,9 @@ Shader "Unlit/DepthFog"
                 // return float4(1 - waterDepthDifference01.xxx,1);
                 //tinting : float4(_Color.rgb  ,_Transparency)
                 // return float4(fmod(_Time.y,1).xxx,1);
-                float depth = saturate((existingDepthLinear) * (1 / 10));
 
                 //Texture
-                float4 tex_color = tex2D(_MainTex,(i.uv * _MainTex_ST.xy + (_MainTex_ST.zw )));
-                float dist = distance(i.worldPos,_WorldSpaceCameraPos)/100; 
 
-                float3 color_texture_composite = ((_Color.rgb ));
                 float3 underwater_composite = underwater_color*_UnderwaterBias * max(lerp(1-_UnderwaterFog,1,waterDepthDifference01),0);
                 
                 float amount = 1-clamp(_UnderwaterBias * max(lerp(1-_UnderwaterFog,1,waterDepthDifference01),0),0,1);
@@ -121,7 +116,7 @@ Shader "Unlit/DepthFog"
                 if( step(underwater_composite.r,0) <= 0)
                     return float4(underwater_composite* _UnderLineSmoothness,_Transparency) ;
                     //return float4(underwater_composite* _UnderLineSmoothness,_Transparency) ;
-                 return ( _Color*tex_color);
+                 return ( _Color);
                 // return float4(((_Color.rgb * (1 - _TextureTransparency) + (tex_color * _TextureTransparency)) + (float4(background_color* _TextureTransparency,1)) )  * (diffuse_coeficient ),1)  + (_FoamColor * step((1 -_FoamTickness) ,waterDepthDifference01 )) + specular_coeficient * _SpecularFactor;
             }
             
