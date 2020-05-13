@@ -15,7 +15,7 @@ public class MiFinaaaal : MonoBehaviour {
   }
 
   IEnumerator _Trigger () {
-    yield return new WaitForSeconds(1);
+    yield return new WaitForSeconds(2);
     switch (que) {
       case 0: FinaleCountHandler.Instance.FinalMaldad(); break;
       case 1: FinaleCountHandler.Instance.FinalBalance(); break;
