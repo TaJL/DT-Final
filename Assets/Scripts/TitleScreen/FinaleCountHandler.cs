@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class FinaleCountHandler : MonoBehaviour
@@ -9,6 +8,9 @@ public class FinaleCountHandler : MonoBehaviour
     public bool balance = false;
     public bool maldad = false;
 
+    public Enemy BossMaldad;
+    public Enemy BossBalance;
+    public Enemy BossMoralRota;
 
     private void Awake()
     {
@@ -16,5 +18,23 @@ public class FinaleCountHandler : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
+    }
+
+    public void FinalMaldad()
+    {
+        FinaleCountHandler.Instance.balance = true;
+        SceneManager.LoadScene(0);
+    }
+
+    public void FinalBalance()
+    {
+        FinaleCountHandler.Instance.balance = true;
+        SceneManager.LoadScene(0);
+    }
+
+    public void FinalMoralRota()
+    {
+        FinaleCountHandler.Instance.balance = true;
+        SceneManager.LoadScene(0);
     }
 }
