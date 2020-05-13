@@ -34,6 +34,10 @@ public class FollowAndAttack : MonoBehaviour {
 
   void Update ()
   {
+    if (far.target) {
+      target = far.target;
+    }
+
     if (cooldown > 0)
     {
       cooldown -= Time.deltaTime;
